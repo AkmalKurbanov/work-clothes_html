@@ -1,1 +1,166 @@
-header 1
+header.header
+  include ../../includes/catalog-window
+  .header__top-wrap
+    .container
+      .header__top  
+        .header__address 
+          address
+            a(href="#") Россия, Санкт-Петербург, ул. Бехтерева дом 2
+        .header__nav
+          nav 
+            ul  
+              mixin nav(item,active)
+                li(class=active) 
+                  a(href="#")=item   
+              +nav('Нанесение логотипов','active')    
+              +nav('О нас')    
+              +nav('Доставка')    
+              +nav('Отзывы')    
+              +nav('Таблица размеров')    
+  .header__bottom-wrap            
+    .container 
+      .header__bottom
+        .header__logo
+          a(href="#")
+            img(src="assets/img/logo.png", alt="")                      
+        .catalog-control
+          a(href="#").btn.btn--catalog 
+            .hamburger
+              span
+              span
+              span
+            |Каталог
+          .catalog-search-wrap  
+            form(action="")
+              .catalog-search
+                input(type="text" placeholder="Введите наименование товара")
+                button(type="submit").btn Найти          
+
+        .header__contacts 
+          a(href="#" tel:+78126422310).underline +7 (812) 642-23-10
+          span Пн-Пт с 9:00 до 17:00       
+
+        .header__user-control 
+          a(href="#").personal-cabinet
+            .icon 
+              img(src="assets/img/guest.jpg", alt="") 
+            span Личный Кабинет  
+          a(href="").basket
+            .icon 
+              img(src="assets/img/cart.png", alt="") 
+            span Корзина
+            .basket__count 0
+header.header-mobile
+  .mobile-menu
+    .container
+      .mobile-menu__logo   
+        a(href="#") Сайт Рабочая одежда
+      .mobile-menu__close  
+        span              
+        span
+      .mobile-menu__contacts
+        .mobile-menu__contacts-item
+          .mobile-menu__contacts-icon 
+            img(src="assets/img/phone.jpg", alt="")
+          a(href="tel:+78126422310") +7 (812) 642-23-10 
+        .mobile-menu__contacts-item
+          p График работы: с понедельника по пятницу с 9:00 до 17:00  
+      .mobile-menu__nav
+        ul
+          mixin item(item ,active)
+            li(class=active) 
+              a(href="#")=item  
+          +item('Нанесение логотипов','active')       
+          +item('Отзывы')       
+          +item('О нас')       
+          +item('Доставка')       
+          +item('Контакты')       
+          +item('Таблица размеров')       
+  .header-mobile__nav-wrap.fixed-menu   
+    .container
+      .header-mobile__nav
+        ul  
+          li 
+            a(href="#")
+              .header-mobile__nav-icon  
+                img(src="assets/img/home.jpg", alt="")
+              .header-mobile__nav-title Главная страница 
+          li 
+            a(href="#")
+              .header-mobile__nav-icon.header-mobile__nav-icon--catalog
+                span
+                span
+                span
+              .header-mobile__nav-title Каталог и поиск 
+          li 
+            a(href="#")
+              .header-mobile__nav-icon
+                img(src="assets/img/profile-mobile.png", alt="")
+              .header-mobile__nav-title Личный Кабинет
+          li
+            a(href="").basket
+              .icon 
+                img(src="assets/img/cart.png", alt="") 
+                .basket__count 200  
+              span Корзина
+          li
+            a(href="#")
+              .header-mobile__nav-icon.header-mobile__nav-icon--menu
+                div
+                  span
+                  span
+                  span
+              .header-mobile__nav-title Меню
+  .header-mobile__nav-wrap   
+    .container
+      .header-mobile__nav
+        ul  
+          li 
+            a(href="#")
+              .header-mobile__nav-icon  
+                img(src="assets/img/home.jpg", alt="")
+              .header-mobile__nav-title Главная страница 
+          li 
+            a(href="#")
+              .header-mobile__nav-icon.header-mobile__nav-icon--catalog
+                span
+                span
+                span
+              .header-mobile__nav-title Каталог и поиск 
+          li 
+            a(href="#")
+              .header-mobile__nav-icon
+                img(src="assets/img/profile-mobile.png", alt="")
+              .header-mobile__nav-title Личный Кабинет
+          li
+            a(href="").basket
+              .icon 
+                img(src="assets/img/cart.png", alt="") 
+                .basket__count 200  
+              span Корзина
+          li
+            a(href="#")
+              .header-mobile__nav-icon.header-mobile__nav-icon--menu
+                div
+                  span
+                  span
+                  span
+              .header-mobile__nav-title Меню
+                
+  .container 
+    .header-mobile__wrap
+      .header-mobile__logo 
+        a(href="#")
+          img(src="assets/img/logo.jpg", alt="") 
+      .header-mobile__address
+        p Россия, Санкт-Петербург, ул. Бехтерева, дом 2
+        a(href="#") +7 (812) 642-23-10
+        p Пн-Пт с 9:00 до 17:00
+    .catalog-control
+      .catalog-search-wrap  
+        form(action="")
+          .catalog-search
+            input(type="text" placeholder="Введите наименование товара")
+            button(type="submit").btn Найти 
+
+  

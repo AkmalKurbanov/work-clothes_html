@@ -1,0 +1,45 @@
+extends layout/main/main
+block title
+  | success
+block main
+  .wrapper
+    .content
+      include includes/header/header
+
+      .success
+        .container
+          .success__wrap
+            .success__info 
+              .success__title Заказ 
+                span №4872
+              .success__check 
+                .success__check-img 
+                  img(src="assets/img/success-check.png", alt="")
+                .success__check-desc
+                  p Информация по вашему заказу принята. <br> Свяжемся с вами в ближайшее рабочее время. <br> Желаем хорошего дня!  
+              .success__info-list 
+                ul  
+                  li Заказ № 4872 от 3.03.2021
+                  li
+                    span Доставка по адресу в Санкт-Петербурге: 
+                    | Выборгское шоссе, д. 28, к. 3. подъезд 5, вход со двора
+                  li
+                    span К оплате: 
+                    | 145 978 руб.
+                  li
+                    span Оплата как физическое лицо.
+                  li
+                    span График работы:
+                    | с понедельника по пятницу, с 9:00 до 17:00 
+                  li
+                    span Телефон для вопросов:
+                    | +7 (812) 642-23-10 
+            .success__img
+              img(src="assets/img/success.jpg", alt="") 
+
+              
+                
+    include includes/footer/footer
+
+
+  include includes/scripts 

@@ -5,9 +5,60 @@ block main
   .wrapper
     .content
       include includes/header/header
- 
 
-     
+      .slider
+        .container 
+          .slider__wrap 
+            .swiper-container.main-slider
+              .swiper-wrapper
+                mixin slide(img)
+                  .swiper-slide
+                    a(href="#" style="background-image: url(assets/img/"+img+")")
+                +slide('slide.jpg')  
+                +slide('slide.jpg')  
+                +slide('slide.jpg')  
+                +slide('slide.jpg')  
+                +slide('slide.jpg')  
+            .slider-btn.slider-btn--left.main-slider-btn-left
+              .arrow
+                span 
+                span 
+            .slider-btn.slider-btn--right.main-slider-btn-right
+              .arrow
+                span 
+                span  
+
+      .advantages
+        .container 
+          h2 Рабочая одежда по выгодным ценам с доставкой по России и СНГ
+          .advantages__list 
+            mixin advantage(title, desc, modificator)
+              .advantages__item
+                .advantages__wrap  
+                  .advantages__title(class=modificator)
+                    span=title
+                  .advantages__desc
+                    p=desc  
+            +advantage('Доставим куда угодно', 'У нас большой опыт в логистике, сотрудничестве с транспортными компаниями и доставке по Санкт-Петербургу. Осуществляли доставку заказов в разные уголки России, в Казахстан, Беларусь. Грамотно организуем доставку заказа любых объёмов, донесём до вас всю информацию по логистике в понятном виде.','skew green')       
+            +advantage('Почему низкие цены?', 'Работаем в нише спецодежды с 2003 года. За счёт долгих взаимовыгодных отношений с производителями и поставщиками, а также большого количества постоянных клиентов мы держим минимальные наценки на наши товары.','skew orange')       
+            +advantage('Большой ассортимент', 'Имеем собственный склад в Санкт-Петербурге. На нём в наличии широкий ассортимент рабочей одежды разных размером. Если чего-то не окажется на складе, организуем поставку со склада производителя - вам останется только выбрать удобный способ получения и принять заказ. По этим причинам, нашим клиентам мы предлагаем огромный каталог товаров.','skew green')       
+      
+      include includes/pupular
+      
+      .container
+        .info-block 
+          h1 Интернет-магазин спецодежды в Санкт-Петербурге
+          p В каталоге нашего интернет-магазина «Спецода» собрана качественная рабочая одежда оптом и в розницу. Дополнительно мы предлагаем средства индивидуальной защиты и спецобувь для работы летом, в межсезонье и зимой. У нас вы найдете такие категории рабочей спецодежды:
+
+        .call-to-action.skew.orange 
+          span Найдите нужные товары при помощи 
+            a(href="#").underline каталога
+            |  и 
+            a(href="#").underline поиска
+            | !
+         
+              
+
 
     include includes/footer/footer
 

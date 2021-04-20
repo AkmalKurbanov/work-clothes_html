@@ -1,0 +1,221 @@
+extends layout/main/main
+block title
+  | product
+block main
+  .wrapper
+    .content
+      include includes/login
+      include includes/header/header
+
+      .profile
+        .container
+          .profile__title
+            span Павел, 
+            | добро пожаловать в личный кабинет 
+          .profile__wrap
+            .profile__sidebar-wrap 
+              .profile__sidebar 
+                ul.profile__sidebar-list
+                  mixin sidebarItem(item,active)
+                    li(class=active) 
+                      a(href="#").underline=item 
+                  +sidebarItem('Мои данные','active')    
+                  +sidebarItem('История заказов')    
+                  +sidebarItem('Мои отзывы')    
+              .profile__logout
+                a(href="#").btn.btn--prevailing Выйти  
+            .profile__info
+              .profile__info-title Мои отзывы
+              .reviews
+                .reviews__item
+                  .reviews__col
+                    .reviews__date 15.03.2021	      
+                    .reviews__name Павел      
+                    .reviews__ratting
+                  .reviews__col
+                    .reviews__theme Отзыв о товаре Летний костюм рабочий «Стройка» с полукомбинизоном
+                    .reviews__review Кайфовый широкий костюм с хорошим сочетанием цена-качество.  Моим узбекам очень понравился. Зашивается легко 
+                    .reviews__control
+                      .reviews__edit Редактировать                             
+                      .reviews__delete Удалить                          
+                .reviews__item
+                  .reviews__col
+                    .reviews__date 15.03.2021	      
+                    .reviews__name Павел      
+                    .reviews__ratting
+                  .reviews__col
+                    .reviews__theme Отзыв о сайте
+                    .reviews__review Хороший сайт сделали. Удобнее, чем у кобры и чёрного кота.
+                    .reviews__control
+                      .reviews__edit Редактировать                             
+                      .reviews__delete Удалить                           
+
+              .profile__info-title История заказов
+              .profile__info-history.history 
+                .history__table 
+                  table
+                    thead 
+                      tr 
+                        th Дата оформления
+                        th Номер
+                        th Сумма
+                        th(colspan="2").delivery Доставка
+                    tbody
+                      tr 
+                        td 13.03.2021
+                        td №34028
+                        td 142 978 руб.
+                        td.delivery Выборгское шоссе, д. 28, к. 3. подъезд 5, вход со двора
+                        td.delivery
+                          a(href="#").btn.btn--prevailing.history-btn Состав заказа
+                      tr 
+                        td(colspan="3").delivery-mobile
+                          span Доставка:  
+                          span Выборгское шоссе, д. 28, к. 3. подъезд 5, вход со двора
+                          a(href="#").btn.btn--prevailing.history-btn Состав заказа
+                      tr
+                        td( colspan="5").order-list    
+                          table
+                            thead
+                              tr
+                                th( colspan="6") Товар     
+                                th Количество      
+                                th Цена    
+                                th Сумма
+                            tbody      
+                              tr 
+                                td( colspan="6")
+                                  .history__product
+                                    .history__product-img
+                                      img(src="assets/img/popular1.jpg", alt="")
+                                    .history__product-title Костюм «Байкал» утеплённый
+                                td 2
+                                td 3079 руб. 
+                                td 6178 руб. 
+                              tr 
+                                td( colspan="6")
+                                  .history__product
+                                    .history__product-img
+                                      img(src="assets/img/popular2.jpg", alt="")
+                                    .history__product-title Костюм «Бригадир Люкс» утепленный.
+                                td 30
+                                td 4560 руб.
+                                td 136 800 руб.
+                      tr 
+                        td 13.03.2021
+                        td №34028
+                        td 142 978 руб.
+                        td.delivery Выборгское шоссе, д. 28, к. 3. подъезд 5, вход со двора
+                        td.delivery
+                          a(href="#").btn.btn--prevailing.history-btn Состав заказа
+                      tr 
+                        td(colspan="3").delivery-mobile
+                          span Доставка:  
+                          span Выборгское шоссе, д. 28, к. 3. подъезд 5, вход со двора
+                          a(href="#").btn.btn--prevailing.history-btn Состав заказа
+                      tr
+                        td( colspan="5").order-list    
+                          table
+                            thead
+                              tr
+                                th( colspan="6") Товар     
+                                th Количество      
+                                th Цена    
+                                th Сумма
+                            tbody      
+                              tr 
+                                td( colspan="6")
+                                  .history__product
+                                    .history__product-img
+                                      img(src="assets/img/popular1.jpg", alt="")
+                                    .history__product-title Костюм «Байкал» утеплённый
+                                td 2
+                                td 3079 руб. 
+                                td 6178 руб. 
+                              tr 
+                                td( colspan="6")
+                                  .history__product
+                                    .history__product-img
+                                      img(src="assets/img/popular2.jpg", alt="")
+                                    .history__product-title Костюм «Бригадир Люкс» утепленный.
+                                td 30
+                                td 4560 руб.
+                                td 136 800 руб.
+
+                .history__total Итого в корзине: 142 978 руб. 
+                 
+
+
+              .profile__info-title Мои данные
+              .profile__info-form-group
+                .profile__info-subtitle Основные данные
+
+                .input
+                  label(for="name") Ваше имя:
+                  .input__wrap
+                    input(type="text" id="name" name="name")
+                .input
+                  label(for="phone") Ваш телефон:
+                  .input__wrap
+                    input(type="text" id="phone" name="phone")
+                .input
+                  label(for="e-mail") Ваш e-mail:
+                  .input__wrap
+                    input(type="text" id="e-mail" name="e-mail")
+                .input
+                  label(for="pass") Новый пароль:
+                  .input__wrap
+                    input(type="text" id="pass" name="pass")
+                button.btn.btn--prevailing Сохранить изменения
+
+              .profile__info-form-group
+                .profile__info-subtitle Способ доставки по умолчанию
+              
+                .radio
+                  input#radio-1(name='radio' type='radio')
+                  label.radio-label(for='radio-1') Самовывоз в г. Санкт-Петербурге, ул. Бехтерева, д. 2
+                .radio
+                  input#radio-2(name='radio' type='radio')
+                  label.radio-label(for='radio-2') Доставка по адресу в Санкт-Петербурге
+                .radio
+                  input#radio-3(name='radio' type='radio')
+                  label.radio-label(for='radio-3')  Доставка по адресу в Ленинградской области
+                .radio
+                  input#radio-4(name='radio' type='radio')
+                  label.radio-label(for='radio-4')  Доставка по России или странам СНГ (транспортной службой)
+                .textarea
+                  label(for="textarea") Введите точный адрес доставки (город, улица, дом, помещение, где вход):
+                  textarea#textarea(name="", cols="30", rows="10" placeholder="") 
+                button.btn.btn--prevailing Сохранить изменения
+              
+              
+              
+              .profile__info-form-group
+                .profile__info-subtitle Способ оплаты по умолчанию
+              
+                .radio
+                  input#radio-5(name='radio' type='radio')
+                  label.radio-label(for='radio-5') Юридическое лицо
+                .radio
+                  input#radio-6(name='radio' type='radio')
+                  label.radio-label(for='radio-6') Физическое лицо
+                
+                .input
+                  label Введите ИНН:
+                  .input__wrap
+                    input(type="text")
+                .input.input--file
+                  label Прикрепите реквизиты:
+                  .input__wrap
+                    input(type="file" multiple)#input_file
+                    .input__btn.btn.btn--prevailing#input_btn Выберите файл
+                button.btn.btn--prevailing Сохранить изменения
+
+
+
+        
+                
+    include includes/footer/footer
+
+
+  include includes/scripts 

@@ -1,3 +1,148 @@
 .footer {
   flex: 0 0 auto;
+  background-color: $gray;
+  margin-top: rem(100);
+  padding-top: rem(30);
+  padding-bottom: rem(17);
+
+  @include xs {
+    display: none;
+  }
+
+  * {
+    color: $wc;
+  }
+
+  p {
+    line-height: rem(20);
+
+    &:first-child {
+      margin-bottom: rem(24);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    max-width: rem(314);
+    width: 100%;
+    margin-right: rem(100);
+
+    @include lg {
+      margin-right: rem(50);
+      max-width: rem(214);
+    }
+
+    @include sm {
+      max-width: 100%;
+      margin-bottom: rem(20);
+    }
+
+    &:last-child {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__logo {
+    max-width: rem(314);
+    width: 100%;
+    margin-bottom: rem(27);
+
+    @include lg {
+      max-width: rem(214);
+    }
+  }
+
+  .contacts-block-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include md {
+      flex-wrap: wrap;
+    }
+
+
+    .contacts-block {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &:first-child {
+        @include md {
+          order: 0;
+          flex-basis: 49%;
+        }
+      }
+
+      &:nth-child(2) {
+        @include md {
+          order: 2;
+          flex-basis: 100%;
+          margin-top: rem(20);
+        }
+      }
+
+      &:last-child {
+
+        @include md {
+          order: 1;
+          flex-basis: 49%;
+        }
+
+      }
+
+      a {
+        font-size: rem(25);
+        display: inline-flex;
+
+        @include md {
+          font-size: rem(20);
+        }
+      }
+
+      .btn {
+        border-color: $wc;
+        margin-top: rem(10);
+
+        &:hover {
+          background-color: $wc;
+          color: $gray;
+        }
+      }
+
+      .phone {
+        font-size: rem(35);
+
+        @include md {
+          font-size: rem(25);
+        }
+      }
+    }
+
+    .underline {
+      &:after {
+        background-color: $wc;
+      }
+    }
+  }
+
+  .info-block {
+    margin-top: rem(68);
+
+    @include md {
+      margin-top: rem(40);
+    }
+  }
 }

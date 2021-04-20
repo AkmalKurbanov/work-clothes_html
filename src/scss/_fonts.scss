@@ -1,3 +1,5 @@
 @import "mixins/fontface";
 
-@include font-face("fontsName", "../assets/fonts/fontsName", 400);
+@include font-face("akrobat", "../assets/fonts/akrobat/Akrobatblack", 900);
+@include font-face("akrobat", "../assets/fonts/akrobat/Akrobatsemibold", 600);
+@include font-face("akrobat", "../assets/fonts/akrobat/Akrobatbold", 700);

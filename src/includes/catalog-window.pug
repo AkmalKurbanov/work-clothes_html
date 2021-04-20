@@ -1,0 +1,91 @@
+.catalog
+  .catalog__close
+    span
+    span
+  .catalog__left-col
+    .catalog__category.category
+      ul
+        mixin catalogCategory(icon, title, active)
+          li.category__item
+            a(href="#").category__item-wrap
+              .category__icon 
+                img(src=icon, alt="")  
+              .category__title
+                span=title
+
+        +catalogCategory('assets/img/specodezhda-150x150.png','Спецодежда')    
+        +catalogCategory('assets/img/rabochaya-obuv-150x150.png','Рабочая обувь')    
+        +catalogCategory('assets/img/zatshita-ruk-150x150.png','Защита для рук')    
+        +catalogCategory('assets/img/siz-150x150.png','СИЗ')    
+        +catalogCategory('assets/img/drugoe-150x150.png','Другое')    
+
+  .catalog__right-col
+    .catalog__replace-content-block
+      a(href="#").catalog__title.underline  Спецодежда
+      .catalog__product-wrap
+        .catalog__product
+          .catalog__product-img
+            img(src='assets/img/kat_zimnaya_spec_specodaru-150x150.jpg' alt='')
+          .catalog__product-desc
+            a(href='#').catalog__product-title.underline Зимняя спецодежда
+            ul
+              li
+                a(href='#').underline Костюмы зимние рабочие
+              li
+                a(href='#').underline Куртки зимние рабочие
+              li
+                a(href='#').underline Жилеты зимние рабочие
+              li
+                a(href='#').underline Полукомбинезоны и брюки зимние рабочие
+              li
+                a(href='#').underline Женская зимняя одежда
+              li
+                a(href='#').underline Нательное белье
+
+        .catalog__product
+          .catalog__product-img
+            img(src='assets/img/kat-letnaya_spec_specodaru-150x150.jpg' alt='')
+          .catalog__product-desc
+            .catalog__product-title
+              a(href='#').underline Летняя спецодежда
+            ul
+              li
+                a(href='#').underline Костюмы рабочие мужские
+              li
+                a(href='#').underline Костюмы рабочие из х/б тканей
+              li
+                a(href='#').underline Куртки рабочие
+              li
+                a(href='#').underline Брюки рабочие
+              li
+                a(href='#').underline Жилеты рабочие
+              li
+                a(href='#').underline Комбинезоны рабочие
+              li
+                a(href='#').underline Женская летняя одежда
+              li
+                a(href='#').underline Халаты рабочие
+
+        .catalog__product
+          .catalog__product-img
+            img(src='assets/img/kat_zachit_spec_specodaru-150x150.jpg' alt='')
+          .catalog__product-desc
+            .catalog__product-title
+              a(href='#').underline Защитная спецодежда
+            ul
+              li
+                a(href='#').underline Влагозащитная спецодежда
+              li
+                a(href='#').underline Спецодежда для сварщиков
+              li
+                a(href='#').underline Для металлургов и сталеваров
+              li
+                a(href='#').underline Сигнальная спецодежда
+              li
+                a(href='#').underline Одноразовая одежда
+              li
+                a(href='#').underline От кислот и агрессивной среды
+              li
+                a(href='#').underline Фартуки рабочие
+              li
+                a(href='#').underline Нарукавники рабочие

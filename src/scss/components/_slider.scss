@@ -1,0 +1,92 @@
+.slider {
+  margin-bottom: rem(70);
+
+  @include xs {
+    margin-bottom: rem(65);
+  }
+
+  a {
+    min-height: rem(400);
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include md {
+      min-height: rem(300);
+    }
+
+    @include sm {
+      min-height: rem(200);
+    }
+
+    @include xs {
+      min-height: rem(160);
+    }
+  }
+
+  &__wrap {
+    position: relative;
+
+    @media screen and (max-width: 1350px) {
+      padding: 0 rem(70);
+    }
+
+    @include lg {
+      padding: 0 rem(70);
+      max-width: 100%;
+    }
+
+    @include md {
+      padding: 0 rem(50);
+    }
+
+    @include sm {
+      padding: 0 rem(30);
+    }
+
+    @include xs {
+      padding: 0 rem(10);
+    }
+  }
+
+  .slider-btn {
+    @include sm {
+      width: rem(25);
+      height: rem(25);
+    }
+
+    @include xs {
+      width: rem(17);
+      height: rem(17);
+    }
+
+    span {
+      @include xs {
+        width: rem(6);
+        background-color: #82d0a3;
+      }
+    }
+
+    &--left {
+      @media screen and (max-width: 1350px) {
+        left: 0;
+      }
+
+      @include xs {
+        left: rem(-10);
+      }
+    }
+
+    &--right {
+      @media screen and (max-width: 1350px) {
+        right: 0;
+        left: auto;
+      }
+
+      @include xs {
+        right: rem(-10);
+      }
+    }
+  }
+}

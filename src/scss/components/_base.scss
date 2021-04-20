@@ -1,13 +1,33 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: $bc;
+  font-weight: 600;
 }
 
 html,
 body {
   height: 100%;
   position: relative;
-  // font-family: $helvetica;
+  font-family: $akr;
+}
+
+.scroll-disabled {
+  overflow: hidden;
+}
+
+.dark-layout {
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.188);
+    width: 100%;
+    height: 100vh;
+    z-index: 99999999999999999999;
+  }
 }
 
 a {
@@ -36,6 +56,63 @@ button {
   background: transparent;
 }
 
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+h1 {
+  @include xs {
+    font-size: rem(18);
+    line-height: rem(17);
+  }
+}
+
+h2 {
+  font-size: rem(28);
+
+  @include xs {
+    font-size: rem(16);
+    line-height: rem(16);
+  }
+}
+
+
+p {
+  font-size: rem(16);
+  line-height: rem(17);
+
+  @include xs {
+    font-size: rem(12);
+  }
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: rem(1);
+    width: 0;
+    top: 100%;
+    left: 0;
+    transition: $tr;
+    background-color: $bc;
+  }
+}
+
 // flex footer
 .wrapper {
   display: flex;
@@ -46,6 +123,7 @@ button {
     flex: 1 0 auto;
   }
 }
+
 // flex footer end
 
 // container
@@ -78,3 +156,432 @@ button {
 
 
 // container end
+
+
+// title start
+.skew {
+  transform: skew(-20deg);
+  display: inline-block;
+  padding: rem(3) rem(6);
+
+  span {
+    transform: skew(20deg);
+    color: $wc;
+    display: block;
+  }
+
+  &.green {
+    background-color: $green;
+  }
+
+  &.orange {
+    background-color: $orange;
+  }
+}
+
+// title end
+
+// btn start
+.btn {
+  padding: 0 rem(18);
+  height: rem(49);
+  border-radius: rem(10);
+  color: $wc;
+  font-size: rem(20);
+  display: inline-flex;
+  align-items: center;
+  border: rem(1) solid $bc;
+  text-align: center;
+  line-height: rem(16);
+  justify-content: center;
+  transition: $tr;
+  cursor: pointer;
+
+  &--catalog {
+    font-weight: 700;
+    background-color: $green;
+    border: rem(1) solid $green;
+    color: $wc;
+
+    @include sm {
+      padding: 0 rem(10);
+      font-size: rem(15);
+      height: rem(42);
+      border-radius: rem(5);
+    }
+
+    &:hover {
+      background-color: #269454;
+    }
+
+    .hamburger {
+      display: inline-block;
+      margin-right: rem(6);
+      width: rem(20);
+      height: rem(15);
+      position: relative;
+
+      span {
+        height: rem(3);
+        background-color: $wc;
+        display: block;
+        transition: $tr;
+        position: absolute;
+        transform-origin: left;
+
+        &:first-child {
+          width: rem(20);
+        }
+
+        &:nth-child(2) {
+          width: rem(14);
+          top: rem(6);
+        }
+
+        &:last-child {
+          width: rem(9);
+          margin-bottom: 0;
+          bottom: 0;
+        }
+      }
+    }
+
+    &.open {
+      span {
+        width: 15px;
+
+        &:first-child {
+          top: -1px;
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translateX(-200px);
+          opacity: 0;
+        }
+
+        &:last-child {
+          bottom: -1px;
+          width: 100%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &--prevailing {
+    border-color: $green;
+    color: $wc;
+    background-color: $green;
+
+    &:hover {
+      background-color: #269454 !important;
+      color: $wc !important;
+      border-color: #269454 !important;
+
+    }
+  }
+
+  &--secondary {
+    border-color: $orange;
+    color: $wc;
+    background-color: $orange;
+
+    &:hover {
+      background-color: #e79514 !important;
+      color: $wc !important;
+      border-color: #e79514 !important;
+    }
+  }
+}
+
+// btn end
+
+
+
+
+// slider btn start
+.slider-btn {
+  width: rem(42);
+  height: rem(42);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  background-color: #a4ddbc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  outline: none;
+  cursor: pointer;
+
+  &--left {
+    right: 100%;
+    margin-right: rem(45px);
+    transform: translateY(-50%);
+  }
+
+  &--right {
+    left: 100%;
+    margin-left: rem(45px);
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .arrow {
+    span {
+      width: rem(10);
+      height: rem(1);
+      background-color: $green;
+      display: block;
+      transform-origin: left;
+      transform: rotate(45deg);
+
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// slider btn end
+
+// breadcrumbs start
+.breadcrumbs {
+  ul {
+    li {
+      font-size: rem(14);
+      display: inline-block;
+      padding-left: rem(10);
+      padding-right: rem(3);
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '>';
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:first-child {
+        &:before {
+          display: none;
+        }
+
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-left: rem(15);
+
+        &:before {
+          content: '->';
+        }
+
+        a {
+          pointer-events: none;
+        }
+      }
+
+      a {
+        font-size: rem(14);
+        color: $bc;
+
+        @include xs {
+          font-size: rem(10);
+        }
+      }
+    }
+  }
+}
+
+// breadcrumbs end
+
+// input start
+.input {
+  margin-bottom: rem(10);
+
+  label {
+    line-height: rem(17);
+    margin-bottom: rem(7);
+    display: block;
+
+    @include xs {
+      font-size: rem(12);
+      margin-bottom: rem(2);
+    }
+  }
+
+  &__wrap {
+    border-radius: rem(10);
+    border: rem(1) solid #ccc;
+    max-width: rem(200);
+    width: 100%;
+
+    @include xs {
+      max-width: rem(165);
+    }
+
+    input {
+      width: 100%;
+      height: rem(28);
+      padding-left: rem(10);
+
+      @include xs {
+        font-size: rem(12);
+      }
+    }
+  }
+
+  &--file {
+
+    input {
+      position: absolute;
+      padding-left: 0;
+      padding-left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    position: relative;
+
+    .input__wrap {
+      max-width: inherit;
+      border: none;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: rem(145);
+        height: rem(40);
+        background-color: $wc;
+        left: 0;
+
+        @include xs {
+          width: rem(120);
+        }
+      }
+    }
+
+    .btn {
+      position: relative;
+      max-width: 115px !important;
+      min-height: rem(30);
+      left: 0;
+      font-size: rem(16) !important;
+      padding: 0;
+      z-index: 9;
+
+      @include xs {
+        font-size: rem(12) !important;
+        height: rem(20);
+      }
+    }
+  }
+}
+
+
+.radio {
+  margin-bottom: rem(15);
+
+  @include sm {
+    margin-bottom: rem(10);
+  }
+
+  @include xs {
+    margin-bottom: rem(5);
+  }
+
+  label {
+    position: relative;
+    cursor: pointer;
+    padding-left: rem(45);
+
+    @include sm {
+      padding-left: rem(20);
+      font-size: rem(12);
+      line-height: rem(25);
+    }
+
+    @include xs {
+      font-size: rem(12);
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      transition: $tr;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 100%;
+    }
+
+    &:before {
+      width: rem(12);
+      height: rem(12);
+      border: rem(1) solid #0c0c0c;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: rem(10);
+      height: rem(10);
+      background-color: $green;
+      left: rem(2);
+      opacity: 0;
+      transform: translateY(-50%) scale(0);
+    }
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+
+    &:checked {
+
+      +.radio-label {
+        &:after {
+          opacity: 1;
+          transform: translateY(-50%) scale(1);
+        }
+      }
+    }
+  }
+}
+
+.textarea {
+  margin-top: rem(30);
+
+  label {
+    display: block;
+    font-weight: 900;
+    margin-bottom: rem(5);
+    padding-left: rem(4);
+
+    @include xs {
+      font-size: rem(12);
+    }
+  }
+
+  textarea {
+    padding: rem(10) rem(15);
+    border-radius: rem(10);
+    border: rem(1) solid #c1c1c1;
+    max-width: rem(365);
+    width: 100%;
+    max-height: rem(100);
+    resize: none;
+    outline: none;
+    margin-bottom: rem(12);
+  }
+}
+
+
+
+
+// input end

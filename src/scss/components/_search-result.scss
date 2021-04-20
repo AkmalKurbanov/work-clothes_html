@@ -1,0 +1,171 @@
+.search-result {
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    position: relative;
+  }
+
+  &__item {
+    flex-basis: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: rem(30);
+    margin-bottom: rem(30);
+    margin-top: rem(68);
+    border: rem(1) solid transparent;
+    transition: $tr;
+    cursor: pointer;
+    padding: rem(20) rem(10);
+
+    @include lg {
+      margin-top: rem(40);
+    }
+
+    @include md {
+      margin-top: rem(30);
+    }
+
+    &:hover {
+      border-color: $bc;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    @include lg {
+      flex-basis: 31.18%;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(4n) {
+        margin-right: auto;
+      }
+
+    }
+
+    @include md {
+      flex-basis: 30.6%;
+      margin-right: rem(20);
+    }
+
+    @include sm {
+      flex-basis: 45%;
+      margin-right: rem(30);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(3n) {
+        margin-right: auto;
+      }
+    }
+
+    @include xs {
+      max-width: rem(350);
+      flex-basis: 100%;
+      margin: 0 auto !important;
+      margin-bottom: rem(30) !important;
+      border: none;
+    }
+  }
+
+  &__item-wrap {
+    margin-bottom: rem(10);
+  }
+
+  &__img {
+    max-width: rem(260);
+    margin: 0 auto;
+  }
+
+  &__info {
+    @include xs {
+      text-align: center;
+    }
+
+    * {
+      font-weight: 900;
+      font-size: rem(20);
+
+      @include md {
+        font-size: rem(17);
+      }
+
+      @include xs {
+        text-align: center;
+      }
+    }
+  }
+
+  &__title {
+    @include xs {
+      margin-bottom: rem(5);
+    }
+  }
+
+
+  &__cost {
+    display: inline-block;
+  }
+
+  &__status {
+    display: inline-block;
+    font-size: rem(18);
+    color: $orange;
+    margin-left: rem(5);
+
+    @include md {
+      font-size: rem(16);
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include xs {
+      justify-content: space-around;
+    }
+
+    .btn {
+      background: none;
+      border-color: $bc;
+      color: $bc;
+      font-size: rem(18);
+      max-width: 45%;
+      width: 100%;
+
+      @include md {
+        font-size: rem(15);
+        padding: 0 rem(10);
+        height: 40px;
+      }
+
+      @include xs {
+        color: $wc;
+
+        &--prevailing {
+          background-color: $green;
+          border-color: $green;
+        }
+
+        &--secondary {
+          background-color: $orange;
+          border-color: $orange;
+        }
+      }
+    }
+  }
+
+  &__more {
+    display: block;
+    text-align: center;
+  }
+}

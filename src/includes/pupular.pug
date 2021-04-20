@@ -1,0 +1,34 @@
+.popular
+  .container
+    h2 Популярные товары и новинки
+    .popular__slider
+      .popular__slider-wrap 
+        .swiper-container.popular-slider
+          .swiper-wrapper
+            mixin slide(img, title, cost, status)
+              .swiper-slide
+                .popular__slider-img
+                  img(src=img, alt="")
+                .popular__slider-info
+                  .popular__slider-info-wrap
+                    .popular__slider-ratting 
+                    .popular__slider-title  
+                      a(href="#")=title 
+                    .popular__slider-cost=cost
+                    .popular__slider-status=status
+                  .popular__slider-control 
+                    a(href="").btn.btn--prevailing К товару
+                    a(href="").btn.btn--secondary Быстрый заказ
+            +slide('assets/img/popular1.jpg','Костюм «Байкал» утеплённый','3079 руб.','Есть на складе')  
+            +slide('assets/img/popular2.jpg','Костюм «Бригадир Люкс» утепленный.','4560 руб.','Под заказ')  
+            +slide('assets/img/popular3.jpg','Респиратор складной KN95 FFP2 с клапаном','55 руб.','Есть на складе')  
+            +slide('assets/img/popular4.jpg','Каска защитная "Quarts up IV" (Квартс-ап 4) белая','500 руб.','Есть на складе')  
+          
+        .slider-btn.slider-btn--left.popular-slider-btn-left
+          .arrow
+            span 
+            span 
+        .slider-btn.slider-btn--right.popular-slider-btn-right
+          .arrow
+            span 
+            span

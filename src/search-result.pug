@@ -1,0 +1,62 @@
+extends layout/main/main
+block title
+  | search-result
+block main
+  .wrapper
+    .content
+      include includes/header/header
+
+      .search-result 
+        .container
+          .breadcrumbs
+            ul  
+              mixin crumb(crumb)
+                li
+                  a(href="#")=crumb
+              +crumb('Рабочая одежда')
+              +crumb('Поиск по товарам') 
+          h1 Результаты поиска по запросу
+            span  «спецодежда»  
+
+          .search-result__wrap 
+            mixin searchResult(img, title, cost, status)
+              .search-result__item
+                .search-result__item-wrap 
+                  .search-result__img
+                    img(src=img, alt="") 
+                  .search-result__info
+                    .search-result__ratting
+                    .search-result__title=title
+                    .search-result__cost=cost
+                    .search-result__status=status
+                .search-result__control 
+                  a(href="#").btn.btn--prevailing К товару
+                  a(href="#").btn.btn--secondary Быстрый заказ
+            +searchResult('assets/img/popular1.jpg','Костюм «Байкал» утеплённый','3079 руб.','Есть на складе')
+            +searchResult('assets/img/popular2.jpg','Костюм «Бригадир Люкс» утепленный.','4560 руб.','Под заказ')
+            +searchResult('assets/img/popular3.jpg','Респиратор складной KN95 FFP2 с клапаном','55 руб.','Есть на складе')
+            +searchResult('assets/img/popular4.jpg','Каска защитная "Quarts up IV" (Квартс-ап 4) белая','500 руб..','Есть на складе')
+            +searchResult('assets/img/popular4.jpg','Каска защитная "Quarts up IV" (Квартс-ап 4) белая','500 руб..','Есть на складе')
+            +searchResult('assets/img/popular3.jpg','Респиратор складной KN95 FFP2 с клапаном','55 руб.','Есть на складе')
+            +searchResult('assets/img/popular1.jpg','Костюм «Байкал» утеплённый','3079 руб.','Есть на складе')
+            +searchResult('assets/img/popular2.jpg','Костюм «Бригадир Люкс» утепленный.','4560 руб.','Под заказ')
+            +searchResult('assets/img/popular1.jpg','Костюм «Байкал» утеплённый','3079 руб.','Есть на складе')
+            +searchResult('assets/img/popular4.jpg','Каска защитная "Quarts up IV" (Квартс-ап 4) белая','500 руб..','Есть на складе')
+            +searchResult('assets/img/popular2.jpg','Костюм «Бригадир Люкс» утепленный.','4560 руб.','Под заказ')
+            +searchResult('assets/img/popular3.jpg','Респиратор складной KN95 FFP2 с клапаном','55 руб.','Есть на складе')
+          .search-result__more
+            a(href="#").btn.btn--prevailing Показать ещё   
+
+          .call-to-action.skew.orange 
+            span Не нашли, что искали? Позвоните и мы найдём для вас 
+              a(href="#").underline +7 (812) 642-23-10
+              
+          .call-to-action.skew.green 
+            span
+              a(href="#") Вернуться к поиску <<
+              
+                
+    include includes/footer/footer
+
+
+  include includes/scripts 

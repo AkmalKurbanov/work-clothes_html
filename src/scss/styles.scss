@@ -7,6 +7,7 @@
 // @import "../../node_modules/--/--/";
 
 @import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/swiper/swiper-bundle.min";
 //---------------------------------------------
 
 // подключение сгенерированных иконок(fontello),
@@ -33,4 +34,18 @@
 
 @import "components/base";
 @import "components/header";
+@import "components/header-mobile";
+@import "components/catalog";
+@import "components/slider";
+@import "components/advantages";
+@import "components/popular-new-products";
+@import "components/call-to-action";
+@import "components/product";
+@import "components/tabs";
+@import "components/search-result";
+@import "components/success";
+@import "components/profile";
+@import "components/reviews";
+@import "components/login";
 @import "components/footer";
+@import "components/footer-mobile";

@@ -1,0 +1,79 @@
+.footer-mobile {
+  background-color: $gray;
+  padding: rem(23) 0;
+  display: none;
+
+  @include xs {
+    margin-top: rem(50);
+    display: block;
+  }
+
+  a {
+    display: block;
+  }
+
+  * {
+    font-size: rem(12);
+    line-height: rem(12);
+    color: $wc;
+  }
+
+  &__logo {
+    max-width: rem(210);
+    margin-bottom: rem(30);
+  }
+
+  &__copyright {
+    p {
+      font-size: rem(12);
+      line-height: rem(12);
+
+      &:first-child {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__col-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    flex-basis: 59%;
+
+    &:last-child {
+      flex-basis: 39%;
+    }
+
+    span {
+      font-weight: 900;
+      margin-bottom: rem(10);
+      display: block;
+    }
+  }
+
+  .btn {
+    border-color: $wc;
+    display: inline-flex;
+    height: rem(23);
+    margin-top: rem(10);
+    padding: 0 rem(10);
+    &:hover {
+      background-color: $wc;
+      color: $gray;
+    }
+  }
+
+  .block-info {
+    margin-top: rem(35);
+
+    p {
+      margin-bottom: rem(10);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

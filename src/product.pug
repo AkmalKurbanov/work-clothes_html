@@ -1,0 +1,279 @@
+extends layout/main/main
+block title
+  | product
+block main
+  .wrapper
+    .content
+      include includes/header/header
+
+      .product  
+        .container
+          .breadcrumbs
+            ul  
+              mixin crumb(crumb)
+                li
+                  a(href="#")=crumb
+              +crumb('Рабочая одежда')
+              +crumb('Спецодежда')
+              +crumb('Летняя спецодежда')
+              +crumb('Летний костюм рабочий «Стройка» с полукомбинизоном')
+          h1 Летний костюм рабочий "Стройка" с полукомбинезоном  
+          .product__info-block-wrap                 
+            .product__img-block 
+              .swiper-container.product-slider
+                .swiper-wrapper
+                  mixin slide(img)
+                    .swiper-slide
+                      img(src=img, alt="")
+                  +slide('assets/img/product-main.jpg')
+                  +slide('assets/img/product2.jpg')
+                  +slide('assets/img/product3.jpg')
+                .product__thumbs
+                  .swiper-pagination   
+                  mixin thumb(thumb)
+                    .product__thumb
+                      img(src=thumb, alt="")
+                  +thumb('assets/img/product-main.jpg')
+                  +thumb('assets/img/product2.jpg')
+                  +thumb('assets/img/product3.jpg')
+
+            .product__characteristics
+              .product__cost Цена: 550 руб.
+              .product__status Есть на складе.
+              .product__series арт. 294817
+              a(href="#").btn.btn--secondary Быстрый заказ 
+
+              .product__size.product-tb
+                form(action="") 
+                  table
+                    thead 
+                      tr 
+                        mixin th(th)
+                          th=th
+                        +th('Размер')   
+                        +th('Цена')   
+                        +th('Количество')   
+                        +th('+ Добавить в корзину')   
+                    tbody 
+                      tr 
+                        td 44-46 170-176
+                        td 550 руб.
+                        td 
+                          .product__quantity
+                            .minus.product__quantity-btn 
+                            input#number(class="form-control"  min="0" type='number' value='0')
+                            .plus.product__quantity-btn
+                        td 
+                          a(href="#").operation в корзину 
+                            span 
+                              img(src="assets/img/cart.jpg", alt="")    
+                      tr 
+                        td 44-46 170-176
+                        td 550 руб.
+                        td 
+                          .product__quantity
+                            .minus.product__quantity-btn 
+                            input#number(class="form-control"  min="0" type='number' value='0')
+                            .plus.product__quantity-btn
+                        td 
+                          a(href="#").operation ОФОРМИТЬ ЗАКАЗ   
+                      tr 
+                        td 44-46 170-176
+                        td 550 руб.
+                        td 
+                          .product__quantity
+                            .minus.product__quantity-btn 
+                            input#number(class="form-control"  min="0" type='number' value='0')
+                            .plus.product__quantity-btn
+                        td    
+                      tr 
+                        td 44-46 170-176
+                        td 550 руб.
+                        td 
+                          .product__quantity
+                            .minus.product__quantity-btn 
+                            input#number(class="form-control"  min="0" type='number' value='0')
+                            .plus.product__quantity-btn
+                        td    
+                      tr 
+                        td 44-46 170-176
+                        td 550 руб.
+                        td 
+                          .product__quantity
+                            .minus.product__quantity-btn 
+                            input#number(class="form-control"  min="0" type='number' value='0')
+                            .plus.product__quantity-btn
+                        td    
+              .product__additional-info.additional-info
+                .additional-info__title Вы получите бесплатное нанесение логотипов.
+                .additional-info__subtitle Участвует в акции!
+                p При покупки от 30 шт. <br> нанесение логотипов бесплатно!
+
+          .product__tabs 
+            .tab
+              ul.tabs
+                li.active
+                  a(href='#').underline Описание
+                li
+                  a(href='#').underline Характеристики
+                li
+                  a(href='#').underline Отзывы
+                li
+                  a(href='#').underline Таблица размеров
+              .tab_content
+                .tabs_item
+                  p Летний костюм рабочий «Стройка» - летний комплект для строителей, монтажников, плотников и других представителей рабочих профессий.
+                    |Костюм темно-синего цвета с васильковой отделкой пошит из легкой смесовой ткани с водоотталкивающей пропиткой. Плотность ткани – 210 грамм.
+
+                  p Комплект состоит из куртки и полукомбинезона.
+
+                  p Укороченная куртка застегивается на пуговицы потайным способом, что защищает от ветра.
+
+                  ul 
+                    li Воротник куртки отложной.
+
+                    li Манжеты застегиваются на пуговицы и дополнительно защищают от продуваний.
+
+                    li Низ куртки регулируется по ширине эластичной резинкой.
+
+                    li На куртке есть два нагрудных и два боковых вместительных кармана, в которые поместятся личные принадлежности и небольшие инструменты.
+
+                    li Полукомбинезон застегивается на пуговицы и регулируется по длине бретелями со специальными застежками.
+
+                    li Талия регулируется по объему эластичной лентой.
+
+                    li Полукомбинезон имеет вместительный нагрудный карман, куда поместятся мобильный телефон, ключи и даже документы. Также есть два боковых кармана для перчаток. 
+                .tabs_item 
+                  h2 Подробные характеристики товара 
+                    span Летний костюм рабочий «Стройка» с полукомбинезоном
+                  table.characteristics-table
+                    tr 
+                      td Страна:
+                      td Россия
+                    tr 
+                      td ГОСТ: 
+                      td 12.4.280-2014
+                    tr 
+                      td Ткань: 
+                      td Смесовая (65% ПЭ, 35% х/б) 210 г/м2
+                    tr 
+                      td Цвет:  
+                      td синий+васильковый
+                    tr 
+                      td Застёжка:   
+                      td простая
+                    tr 
+                      td Сезон:    
+                      td лето
+
+                .tabs_item 
+                  h2 Отзывы клиентов о товаре 
+                    span Летний костюм рабочий «Стройка» с полукомбинизоном
+                  .product__reviews
+                    p Ещё никто не оставил отзыв об этом товаре. Будьте первым! Ваш опыт будет полезен другим.  
+                    a(href="#").btn Оставить отзыв 
+                .tabs_item
+                  .product__size.product-tb
+                    .product__table-size
+                      .product__table-size-title Основные размерные признаки типовых фигур женщин                                                    
+                      .product__table-size-desc ГОСТ 31396-2009 "Классификация типовых фигур женщин по ростам, размерам и полнотным группам"                                                   
+                      .product__table-wrap
+                        .product__table-size-img
+                          img(src="assets/img/table-size.png", alt="")
+                        form(action="") 
+                          table
+                            thead 
+                              tr 
+                                mixin th(th)
+                                  th=th
+                                +th('Размер (жен.)')   
+                                +th('Обхват груди, см (А)')   
+                                +th('Обхват груди, см (А)')   
+                                +th('Рост, см (С)')   
+                            tbody 
+                              tr 
+                                td 80/84
+                                td 80-84
+                                td 86-90
+                                td 158-164, 170-176
+                              tr 
+                                td 80/84
+                                td 80-84
+                                td 86-90
+                                td 158-164, 170-176
+                              tr 
+                                td 80/84
+                                td 80-84
+                                td 86-90
+                                td 158-164, 170-176
+                              tr 
+                                td 80/84
+                                td 80-84
+                                td 86-90
+                                td 158-164, 170-176
+                              tr 
+                                td 80/84
+                                td 80-84
+                                td 86-90
+                                td 158-164, 170-176
+                              tr 
+                                td 80/84
+                                td 80-84
+                                td 86-90
+                                td 158-164, 170-176
+                              
+          .tabs-mobile
+            .tabs-mobile__item
+              .tabs-mobile__tab Описание
+                .arrow   
+                  span
+                  span
+              .tabs-mobile__tab-content  
+                p Летний костюм рабочий «Стройка» - летний комплект для строителей, монтажников, плотников и других представителей рабочих профессий.
+                p Костюм темно-синего цвета с васильковой отделкой пошит из легкой смесовой ткани с водоотталкивающей пропиткой. Плотность ткани – 210 грамм.
+                p Комплект состоит из куртки и полукомбинезона.
+                p Укороченная куртка застегивается на пуговицы потайным способом, что защищает от ветра.
+            .tabs-mobile__item
+              .tabs-mobile__tab Характеристики
+                .arrow   
+                  span
+                  span
+              .tabs-mobile__tab-content  
+                  table.characteristics-table
+                  tr 
+                    td Страна:
+                    td Россия
+                  tr 
+                    td ГОСТ: 
+                    td 12.4.280-2014
+                  tr 
+                    td Ткань: 
+                    td Смесовая (65% ПЭ, 35% х/б) 210 г/м2
+                  tr 
+                    td Цвет:  
+                    td синий+васильковый
+                  tr 
+                    td Застёжка:   
+                    td простая
+                  tr 
+                    td Сезон:    
+                    td лето
+            .tabs-mobile__item
+              .tabs-mobile__tab Отзывы
+                .arrow   
+                  span
+                  span
+              .tabs-mobile__tab-content  
+            .tabs-mobile__item
+              .tabs-mobile__tab Таблица размеров
+                .arrow   
+                  span
+                  span
+              .tabs-mobile__tab-content  
+          include includes/pupular      
+        
+                
+    include includes/footer/footer
+
+
+  include includes/scripts 

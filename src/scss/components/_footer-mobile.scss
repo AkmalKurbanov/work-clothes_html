@@ -6,6 +6,7 @@
   @include xs {
     margin-top: rem(50);
     display: block;
+    padding-bottom: rem(90);
   }
 
   a {
@@ -59,6 +60,7 @@
     height: rem(23);
     margin-top: rem(10);
     padding: 0 rem(10);
+
     &:hover {
       background-color: $wc;
       color: $gray;

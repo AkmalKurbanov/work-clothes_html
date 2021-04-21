@@ -10,14 +10,7 @@ $(document).ready(function () {
     $('body').removeClass('scroll-disabled');
   });
 
-  $(window).scroll(function () {
-    let heightMobileHeader = $('.header-mobile__nav-wrap').height();
-    if ($(this).scrollTop() >= heightMobileHeader) {
-      $('.fixed-menu').addClass("sticky");
-    } else {
-      $('.fixed-menu').removeClass("sticky");
-    }
-  });
+
 
 
 });

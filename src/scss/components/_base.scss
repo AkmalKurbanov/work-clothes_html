@@ -21,12 +21,14 @@ body {
   overflow: hidden;
 
   &:before {
-    position: absolute;
+    position: fixed;
     content: '';
     background-color: rgba(0, 0, 0, 0.188);
-    width: 100%;
-    height: 100vh;
-    z-index: 99999999999999999999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
   }
 }
 
@@ -585,3 +587,401 @@ p {
 
 
 // input end
+
+
+// popup start
+
+.popup-window {
+  box-shadow: 0px 3px 6.57px 2.43px rgba(39, 174, 96, 0.35);
+  background-color: $wc;
+  border-radius: rem(10);
+  padding: rem(30) rem(20) rem(20) rem(20);
+  z-index: 100;
+  max-width: rem(355);
+  width: 100%;
+  display: none;
+
+  @include xs {
+    max-width: rem(280) !important;
+    padding: rem(30) rem(15) rem(15) rem(15);
+  }
+
+  p {
+    margin-bottom: rem(10);
+  }
+
+  &__control {
+    margin-top: rem(18);
+
+
+    .btn {
+      min-width: rem(113);
+      height: rem(30);
+      font-size: rem(16);
+      padding: 0 rem(7);
+      margin-right: rem(22);
+      font-weight: 900;
+
+      @include xs {
+        margin-right: rem(0);
+      }
+
+      &:hover {
+        background-color: #34e37e !important;
+        border-color: #34e37e !important;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .tabs {
+    li {
+      a {
+        font-size: rem(28);
+
+        @include xs {
+          font-size: rem(20);
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: rem(28);
+    line-height: rem(17);
+    margin-bottom: rem(13);
+
+    @include xs {
+      font-size: rem(20);
+      line-height: rem(17);
+      margin-bottom: rem(13);
+    }
+  }
+
+  &--success-message {
+
+    .popup-window__wrap {
+      min-height: rem(95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include xs {
+        min-height: rem(75);
+      }
+    }
+  }
+
+  &--review,
+  &--orange {
+    box-shadow: 0px 3px 6.57px 2.43px rgba(243, 156, 18, 0.35);
+    max-width: rem(260);
+
+    .btn {
+      color: $orange;
+      background-color: transparent;
+      max-width: rem(113);
+      width: 100%;
+      height: rem(30);
+      font-size: rem(16);
+      margin-bottom: rem(30);
+    }
+
+    p {
+      font-weight: 900;
+    }
+
+    .popup-window__order-theme {
+      margin-bottom: rem(30);
+
+      span {
+        color: $orange;
+        font-weight: 900;
+      }
+    }
+  }
+
+  &--review {
+    max-width: rem(320);
+    width: 100%;
+
+    .textarea {
+      label {
+        font-weight: 600;
+      }
+    }
+
+    .error {
+      font-size: rem(12);
+      color: #f00;
+      display: inline-block;
+      margin-bottom: 0;
+      margin-left: rem(10);
+
+      @include xs {
+        font-size: rem(10);
+      }
+    }
+
+    .btn {
+      margin-bottom: 0;
+    }
+  }
+
+  &--callback {
+    .btn {
+      margin: 0;
+    }
+  }
+
+  &--order-success {
+    .popup-window__success-wrap {
+      display: flex;
+      align-items: center;
+      margin-top: rem(15);
+    }
+
+    .popup-window__success-img {
+      max-width: rem(40);
+      width: 100%;
+      min-height: rem(40);
+      margin-right: rem(20);
+    }
+  }
+}
+
+.close {
+  display: inline-block;
+  position: absolute;
+  right: rem(6);
+  top: rem(10);
+  cursor: pointer;
+
+  .close-wrap {
+    width: rem(20);
+    height: rem(20);
+    display: inline-block;
+    position: relative;
+  }
+
+  span {
+    position: absolute;
+    width: rem(16);
+    height: rem(3);
+    background-color: $bc;
+    display: block;
+    top: rem(5);
+
+    &:first-child {
+      transform-origin: left;
+      transform: rotate(45deg);
+      left: 6px;
+    }
+
+    &:last-child {
+      transform-origin: right;
+      transform: rotate(-45deg);
+      right: rem(3);
+    }
+
+  }
+}
+
+// popup end
+
+
+
+// stock start
+.stock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: rem(90) 0;
+
+  @include lg {
+    margin: rem(40) 0;
+  }
+
+  &__title {
+    color: $orange;
+    font-weight: 900;
+    font-size: rem(38);
+
+    @include lg {
+      font-size: rem(30);
+    }
+
+    @include xs {
+      font-size: rem(25);
+      line-height: rem(20);
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    * {
+      font-size: rem(30);
+      line-height: rem(30);
+      text-align: center;
+
+      @include lg {
+        font-size: rem(25);
+        line-height: rem(25);
+      }
+
+      @include xs {
+        font-size: rem(20);
+        line-height: rem(20);
+      }
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// stock end
+
+
+
+
+
+// quantity start
+.quantity {
+  border-radius: rem(10);
+  background-color: #c7c5c5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: rem(66);
+  width: 100%;
+  padding: 0 rem(8);
+
+  @include xs {
+    padding: 0 rem(5);
+    max-width: rem(50);
+  }
+
+  input {
+    width: 100%;
+    min-height: rem(27);
+    text-align: center;
+    font-size: rem(15);
+
+    @include xs {
+      font-size: rem(8);
+      min-height: rem(15);
+    }
+  }
+
+  .minus,
+  .plus {
+    position: relative;
+
+    &:after,
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(10);
+      height: rem(1);
+    }
+  }
+
+  .minus {
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(12);
+      height: rem(1);
+      background-color: $bc;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include xs {
+        width: rem(7);
+      }
+    }
+  }
+
+  .plus {
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      width: rem(12);
+      height: rem(1);
+      background-color: #6c6c6c;
+
+      @include xs {
+        width: rem(7);
+      }
+    }
+
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+
+  .quantity-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+
+// quantity end
+
+
+
+.product-added {
+  min-height: rem(54);
+  background-color: $green;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  transition: $tr;
+
+  &.added {
+    top: 0;
+  }
+
+  &__text {
+    color: $wc;
+    font-weight: 900;
+
+    .link {
+      color: $wc;
+      margin-left: rem(25);
+      font-weight: 900;
+
+      &:after {
+        width: 100%;
+        background-color: $wc;
+      }
+    }
+  }
+
+  .close {
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(15);
+  }
+}

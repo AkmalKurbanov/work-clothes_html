@@ -1,0 +1,81 @@
+extends layout/main/main
+block title
+  | reviews
+block main
+  .popup-window.popup-window--review
+    .close
+      .close-wrap
+        span
+        span
+    .popup-window__wrap
+      .popup-window__title Оставьте отзыв о сайте
+      form(action="")
+        .input
+          label(for="name ") Ваше имя:
+          .input__wrap
+            input(type="text" id="name" name="name")  
+        .input
+          label(for="phone") Ваш телефон:
+          .input__wrap
+            input(type="text" id="phone" name="phone")
+        .rating Ваша оценка:    
+        .textarea
+          label(for="textarea") Отзыв:
+          textarea#textarea(name="", cols="30", rows="10")    
+        button(type="submite").btn.btn--secondary Отправить	
+        p.error Ошибка. Заполните все поля
+  .wrapper
+    .content
+      include includes/header/header
+
+      .reviews
+        .container 
+          .breadcrumbs
+            ul  
+              mixin crumb(crumb)
+                li
+                  a(href="#")=crumb
+              +crumb('Рабочая одежда')
+              +crumb('Отзывы о сайте ')
+          h1 Отзывы о сайте Рабочая одежда  
+          
+          .reviews
+            .reviews-none
+                p Ещё никто не оставил отзыв об этом товаре. Будьте первым! Ваш опыт будет полезен другим.  
+                a(href="#").btn Оставить отзыв
+            .reviews__wrap
+              .reviews__wrap-col
+                .reviews__item
+                  .reviews__col
+                    .reviews__date 15.03.2021	      
+                    .reviews__name Павел      
+                    .reviews__rating
+                  .reviews__col
+                    .reviews__theme Отзыв о товаре Летний костюм рабочий «Стройка» с полукомбинизоном
+                    .reviews__review Кайфовый широкий костюм с хорошим сочетанием цена-качество.  Моим узбекам очень понравился. Зашивается легко 
+                    .reviews__control
+                      .reviews__edit Редактировать                             
+                      .reviews__delete Удалить 
+                .reviews__item
+                  .reviews__col
+                    .reviews__date 15.03.2021	      
+                    .reviews__name Павел      
+                    .reviews__rating
+                  .reviews__col
+                    .reviews__theme Отзыв о товаре Летний костюм рабочий «Стройка» с полукомбинизоном
+                    .reviews__review Кайфовый широкий костюм с хорошим сочетанием цена-качество.  Моим узбекам очень понравился. Зашивается легко 
+                    .reviews__control
+                      .reviews__edit Редактировать                             
+                      .reviews__delete Удалить 
+              .reviews__wrap-col
+                p Оставьте свой отзыв о сайте!
+                a(href="#").btn Оставить отзыв
+                .reviews__rating 
+                  p Рейтинг сайта на основе всех отзывов покупателей: 
+              
+
+
+    include includes/footer/footer
+
+
+  include includes/scripts 

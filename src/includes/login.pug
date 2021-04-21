@@ -1,0 +1,140 @@
+.popup-window.popup-window--login
+  .close
+    .close-wrap
+      span
+      span
+  .tab
+    ul.tabs
+      li.active
+        a(href='#').underline Вход
+      li
+        a(href='#').underline Регистрация
+      
+    .tab_content
+      .tabs_item
+        form(action="")
+          .input
+            label(for="login") Введите почту или телефон
+            .input__wrap
+              input(type="text" id="login" name="login") 
+          .input
+            label(for="pass") Введите пароль
+            .input__wrap
+              input(type="text" id="pass" name="pass") 
+          .popup-window__control
+            button.btn.btn--prevailing Войти	
+            button.btn.btn--prevailing Забыл пароль
+      .tabs_item
+        form(action="")
+          .input
+            label(for="name") Введите, как к вам обращаться
+            .input__wrap
+              input(type="text" id="name" name="name") 
+          .input
+            label(for="phone") Введите телефон:
+            .input__wrap
+              input(type="text" id="phone" name="phone") 
+          .input
+            label(for="phone") Введите e-mail:
+            .input__wrap
+              input(type="text" id="phone" name="phone") 
+          p Пароль будет создан автоматически и отправлен на почту  
+          .popup-window__control
+            button.btn.btn--prevailing Зарегистрироваться
+
+.popup-window.popup-window--recovery
+  .close
+    .close-wrap
+      span
+      span
+  form
+    .popup-window__title Восстановление пароля
+    p Введите телефон или почтовый адрес, указанные при регистрации. Новый пароль будет направлен на ваш e-mail.
+    .input
+      label(for="phone") Введите телефон или e-mail:
+      .input__wrap
+        input(type="text" id="phone" name="phone") 
+    .popup-window__control
+      button.btn.btn--prevailing Отправить
+
+.popup-window.popup-window--success-message
+  .close
+    .close-wrap
+      span
+      span
+  .popup-window__title Успешная регистрация
+  p Ваш пароль отправлен на e-mail, указанный при регистрации.
+
+.popup-window.popup-window--success-message
+  .close
+    .close-wrap
+      span
+      span
+  .popup-window__wrap    
+    .popup-window__title Создан новый пароль
+    p Новый пароль отправлен на ваш e-mail.
+
+
+
+
+
+
+
+
+.popup-window.popup-window--orange.popup-window--callback
+  .close
+    .close-wrap
+      span
+      span
+  .popup-window__wrap
+    .popup-window__title Заказ звонка
+    
+    form(action="")
+      .input
+        label(for="name ") Как к вам обращаться:
+        .input__wrap
+          input(type="text" id="name" name="name")  
+      .input
+        label(for="phone") Ваш телефон:
+        .input__wrap
+          input(type="text" id="phone" name="phone")  
+      button(type="submite").btn.btn--secondary Заказать
+
+      
+.popup-window.popup-window--orange.popup-window--quick-order
+  .close
+    .close-wrap
+      span
+      span
+  .popup-window__wrap
+    .popup-window__title Быстрый заказ
+    .popup-window__order-theme на 
+      span Респиратор складной KN95 FFP2 с клапаном
+    form(action="")
+      .input
+        label(for="name ") Как к вам обращаться:
+        .input__wrap
+          input(type="text" id="name" name="name")  
+      .input
+        label(for="phone") Ваш телефон:
+        .input__wrap
+          input(type="text" id="phone" name="phone")  
+      button(type="submite").btn.btn--secondary Заказать	
+      p Мы перезвоним и обсудим с вами все детали по телефону
+
+
+.popup-window.popup-window--success-message.popup-window--order-success 
+  .close
+    .close-wrap
+      span
+      span
+  .popup-window__wrap
+    .popup-window__title Мы получили ваш заказ.
+    .popup-window__success-wrap 
+      .popup-window__success-img 
+        img(src="assets/img/success-check.png", alt="")
+      .popup-window__success-text  
+        p Ваша заявка принята.
+          |Перезвоним в ближайшее время.
+          |Работаем Пн-Пт с 9:00 до 17:00 
+        p Желаем хорошего дня!

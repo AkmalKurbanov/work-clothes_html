@@ -8,25 +8,6 @@
     }
   }
 
-  &__reviews {
-    .btn {
-      color: $green;
-      border-color: #cccccc;
-      max-width: rem(272);
-      width: 100%;
-      min-height: rem(60);
-      border-width: rem(3);
-      font-size: rem(25);
-      font-weight: 900;
-
-      &:hover {
-        background-color: $green;
-        border-color: $green;
-        color: $wc;
-      }
-    }
-  }
-
   &__table-size {
 
     // display: flex;
@@ -71,7 +52,6 @@
   }
 }
 
-.tab {}
 
 .tabs {
   display: table;
@@ -182,7 +162,7 @@
     display: block;
   }
 
-  &__item {}
+
 
   &__tab {
     position: relative;

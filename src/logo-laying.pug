@@ -1,0 +1,64 @@
+extends layout/main/main
+block title
+  | success
+block main
+
+  .wrapper
+    .content
+      include includes/header/header
+
+      .logo-laying 
+        .container 
+          .breadcrumbs
+            ul  
+              mixin crumb(crumb)
+                li
+                  a(href="#")=crumb
+              +crumb('Рабочая одежда')
+              +crumb('Нанесение логотипов') 
+          h1 Нанесение логотипов и изображений на одежду  
+
+            .stock     
+              .stock__title АКЦИЯ
+              .stock__desc
+                p При покупки от 30 ед. спецодежды <br> нанесение логотипов бесплатно!
+                a(href="#") Посмотреть модели, участвующие в акции
+
+          .logo-laying__product 
+            .logo-laying__product-img
+              img(src="assets/img/logoti.jpg", alt="")
+            .logo-laying__product-desc
+              p У нас организовано собственное производство логотипов. Поэтому покупая у нас спецодежду, вы тут же можете заказать и получить нанесение нужных логотипов.
+              .logo-laying__product-cost Цена 200 руб. за 1 шт
+              .logo-laying__product-control
+                .quantity
+                  .minus.quantity-btn 
+                  input#number(class="form-control"  min="0" type='number' value='0')
+                  .plus.quantity-btn
+                a(href="#").btn.btn--prevailing В корзину
+                a(href="#").btn.btn--secondary Быстрый заказ
+          .logo-laying__slider
+            .logo-laying__slider-wrap
+              .swiper-container.logo-laying-slider
+                .swiper-wrapper
+                  mixin slide(img)
+                    .swiper-slide
+                      img(src=img, alt="")
+                  +slide('assets/img/logoti.jpg')  
+                  +slide('assets/img/logoti.jpg')  
+                  +slide('assets/img/logoti.jpg')  
+                  +slide('assets/img/logoti.jpg')  
+                  +slide('assets/img/logoti.jpg')  
+              .slider-btn.slider-btn--left.logo-laying-left
+                .arrow
+                  span 
+                  span 
+              .slider-btn.slider-btn--right.logo-laying-right
+                .arrow
+                  span 
+                  span    
+
+    include includes/footer/footer
+
+
+  include includes/scripts 

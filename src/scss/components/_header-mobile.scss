@@ -1,4 +1,5 @@
 .header-mobile {
+  margin-top: rem(10);
   margin-bottom: rem(40);
   display: none;
 
@@ -8,28 +9,20 @@
 
   &__nav-wrap {
     background-color: rgb(243, 243, 243);
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.55);
     transition: all 1s;
     min-height: rem(60);
-    margin-bottom: rem(10);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
 
     .container {
       padding: 0 rem(10);
     }
 
-    &.fixed-menu {
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.35);
-      z-index: 11;
-      top: -100%;
-    }
 
-    &.sticky {
-      top: 0;
-    }
   }
 
   &__nav {

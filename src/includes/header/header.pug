@@ -1,4 +1,14 @@
 header.header
+  //- class added
+  .product-added
+    .container
+      .product-added__text
+        | Товар Нанесение логтотипа добавлен в корзину товаров
+        a(href="#").underline.link Перейти
+      .close
+        .close-wrap 
+          span  
+          span  
   include ../../includes/catalog-window
   .header__top-wrap
     .container
@@ -76,41 +86,7 @@ header.header-mobile
           +item('Доставка')       
           +item('Контакты')       
           +item('Таблица размеров')       
-  .header-mobile__nav-wrap.fixed-menu   
-    .container
-      .header-mobile__nav
-        ul  
-          li 
-            a(href="#")
-              .header-mobile__nav-icon  
-                img(src="assets/img/home.jpg", alt="")
-              .header-mobile__nav-title Главная страница 
-          li 
-            a(href="#")
-              .header-mobile__nav-icon.header-mobile__nav-icon--catalog
-                span
-                span
-                span
-              .header-mobile__nav-title Каталог и поиск 
-          li 
-            a(href="#")
-              .header-mobile__nav-icon
-                img(src="assets/img/profile-mobile.png", alt="")
-              .header-mobile__nav-title Личный Кабинет
-          li
-            a(href="").basket
-              .icon 
-                img(src="assets/img/cart.png", alt="") 
-                .basket__count 200  
-              span Корзина
-          li
-            a(href="#")
-              .header-mobile__nav-icon.header-mobile__nav-icon--menu
-                div
-                  span
-                  span
-                  span
-              .header-mobile__nav-title Меню
+
   .header-mobile__nav-wrap   
     .container
       .header-mobile__nav

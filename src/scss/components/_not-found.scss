@@ -1,0 +1,148 @@
+.search-not-found {
+  margin-top: rem(60);
+
+  @include xs {
+    margin-top: rem(30);
+  }
+
+  &__wrap {
+    display: flex;
+
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: rem(40);
+    line-height: rem(38);
+    margin-bottom: rem(35);
+    font-weight: 700;
+
+    @include lg {
+      font-size: rem(35);
+      line-height: rem(35);
+      margin-bottom: rem(30);
+    }
+
+    @include md {
+      font-size: rem(30);
+      line-height: rem(30);
+      margin-bottom: rem(25);
+    }
+
+    @include sm {
+      font-size: rem(25);
+      line-height: rem(25);
+      margin-bottom: rem(20);
+    }
+
+    @include xs {
+      font-size: rem(18);
+      line-height: rem(19);
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(28);
+    line-height: rem(30);
+
+    @include lg {
+      font-size: rem(24);
+      line-height: rem(26);
+    }
+
+    @include md {
+      font-size: rem(20);
+      line-height: rem(22);
+    }
+
+    @include sm {
+      font-size: rem(16);
+      line-height: rem(18);
+    }
+
+    @include xs {
+      font-size: rem(18);
+      line-height: rem(19);
+    }
+  }
+
+  &__img {
+    max-width: rem(560);
+    width: 100%;
+
+    @include md {
+      max-width: rem(320);
+    }
+
+    @include xs {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+      margin: auto;
+      margin-top: rem(20);
+
+      @include xs {
+        display: block;
+      }
+    }
+  }
+
+  .skew {
+    transform: skew(-10deg);
+    padding: rem(3) rem(10);
+
+    span {
+      transform: skew(10deg);
+
+      @include lg {
+        font-size: rem(23);
+      }
+
+      @include md {
+        font-size: rem(20);
+      }
+
+      @include sm {
+        font-size: rem(16);
+      }
+
+      @include xs {
+        font-size: rem(18);
+        line-height: rem(19);
+      }
+    }
+
+    a {
+      display: block;
+
+      @include md {
+        font-size: rem(20);
+      }
+
+      @include sm {
+        font-size: rem(18);
+      }
+
+      @include xs {
+        font-size: rem(18);
+        line-height: rem(19);
+      }
+    }
+
+    &.orange {
+      margin-top: rem(30);
+    }
+
+    &.green {
+      margin-top: rem(10);
+    }
+  }
+}

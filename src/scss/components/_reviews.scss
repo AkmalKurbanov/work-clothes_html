@@ -1,4 +1,61 @@
 .reviews {
+  &__wrap {
+    display: flex;
+
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  &__wrap-col {
+    @include xs {
+      order: 1;
+    }
+
+    &:last-child {
+      max-width: rem(275);
+      width: 100%;
+      margin-left: rem(40);
+
+      @include md {
+        max-width: rem(200);
+      }
+
+      @include xs {
+        margin-left: 0;
+        order: 0;
+      }
+
+      p {
+        font-size: rem(20);
+        margin-bottom: rem(20);
+
+        @include md {
+          font-size: rem(18);
+          margin-bottom: rem(10);
+        }
+      }
+
+      .reviews__rating {
+        margin-top: rem(25);
+
+        @include md {
+          margin-top: rem(15);
+        }
+      }
+    }
+
+    .reviews__item {
+      .reviews__col {
+        &:first-child {
+          @include sm {
+            margin-right: rem(10);
+          }
+        }
+      }
+    }
+  }
+
   &__item {
     border: rem(1) solid #ccc;
     border-radius: rem(10);
@@ -89,6 +146,61 @@
       &:hover {
         color: $green;
       }
+    }
+  }
+
+  .btn {
+    border: rem(3) solid #ccc;
+    color: $green;
+    font-weight: 900;
+    max-width: 100%;
+    width: 100%;
+
+    @include xs {
+      max-width: rem(140);
+      height: rem(32);
+      font-size: rem(14);
+    }
+
+    &:hover {
+      background-color: $green;
+      color: $wc;
+      border-color: $green;
+    }
+  }
+}
+
+.reviews-none {
+  display: none;
+
+  p {
+    margin-bottom: rem(30);
+
+    @include xs {
+      margin-bottom: rem(10);
+    }
+  }
+
+  .btn {
+    color: $green;
+    border-color: #cccccc;
+    max-width: rem(272);
+    width: 100%;
+    min-height: rem(60);
+    border-width: rem(3);
+    font-size: rem(25);
+    font-weight: 900;
+
+    @include xs {
+      max-width: rem(140);
+      min-height: rem(23);
+      font-size: rem(14);
+    }
+
+    &:hover {
+      background-color: $green;
+      border-color: $green;
+      color: $wc;
     }
   }
 }

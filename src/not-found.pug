@@ -1,0 +1,40 @@
+extends layout/main/main
+block title
+  | not-found
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .breadcrumbs
+        .container
+          ul  
+            mixin crumb(crumb)
+              li
+                a(href="#")=crumb
+            +crumb('Рабочая одежда')
+            +crumb('Поиск по товарам') 
+
+      .search-not-found
+        .container
+          .search-not-found__wrap
+            .search-not-found__text
+              .search-not-found__title К сожалению, по запросу «спецсмтыо» ничего не найдено.
+              .search-not-found__subtitle Пожалуйста, проверьте, что правильно вводите поисковое слово.
+              .search-not-found__img.search-not-found__img--mobile
+                img(src="assets/img/notfound.jpg", alt="")      
+              .call-to-action.skew.orange
+                span 
+                  |Позвоните и мы найдём для вас 
+                  a(href="tel:+78126422310") +7 (812) 642-23-10
+              .call-to-action.skew.green
+                span Вернуться к поиску <<
+            .search-not-found__img
+              img(src="assets/img/notfound.jpg", alt="")      
+
+
+              
+                
+    include includes/footer/footer
+
+
+  include includes/scripts 

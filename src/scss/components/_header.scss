@@ -269,9 +269,6 @@
       width: 100%;
       position: relative;
 
-      @include sm {
-        border-radius: rem(5);
-      }
 
       input {
         height: rem(47);
@@ -279,6 +276,11 @@
         padding-right: rem(90);
         font-size: rem(18);
         width: 100%;
+        border-radius: rem(10);
+
+        &:focus {
+          background-color: rgba(204, 204, 204, 0.192);
+        }
 
         @include lg {
           padding-right: rem(75);
@@ -355,6 +357,7 @@
         cursor: pointer;
         transition: $tr;
         padding: 0 rem(15);
+        background-color: $wc;
 
         @include lg {
           font-size: rem(16);
@@ -362,7 +365,6 @@
 
         @include sm {
           height: rem(42);
-          border-radius: rem(5);
         }
 
 

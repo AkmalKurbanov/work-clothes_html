@@ -1,0 +1,192 @@
+ .basket-page {
+   &__title {
+     font-size: rem(32);
+     margin-bottom: rem(30);
+
+     @include xs {
+       font-size: rem(25);
+     }
+   }
+
+   &__table {
+     table {
+       width: 100%;
+       border-spacing: 0;
+       border-radius: rem(10);
+       overflow: hidden;
+
+       thead {
+         background-color: $green;
+
+         th {
+           color: $wc;
+           font-size: rem(20);
+           font-weight: 900;
+           padding: rem(5) 0;
+           text-align: left;
+
+           @include xs {
+             display: none;
+           }
+
+           &:first-child {
+             padding-left: rem(30);
+           }
+         }
+       }
+
+       tbody {
+         td {
+           position: relative;
+           padding-right: rem(30);
+           border-bottom: rem(1) solid #ccc;
+           padding: rem(20) 0;
+
+           @include xs {
+             display: none;
+           }
+
+           &:first-child {
+             max-width: 12rem;
+             padding-left: rem(20);
+             padding-right: rem(20);
+
+             .close {
+               display: none;
+               position: absolute;
+               top: rem(8);
+               right: 0;
+
+               @include xs {
+                 display: block;
+               }
+             }
+
+             @include md {
+               padding-left: rem(10);
+             }
+
+             @include xs {
+               display: table-cell;
+               padding: rem(10) rem(15);
+             }
+           }
+
+           &:last-child {
+             padding-right: 0;
+           }
+
+           .close {
+             position: relative;
+             top: auto;
+             right: auto;
+           }
+
+           .quantity {
+             max-width: rem(100);
+             min-height: rem(40);
+
+             @include md {
+               max-width: rem(80);
+               min-height: rem(30);
+             }
+
+             input {
+               font-size: rem(16);
+             }
+           }
+         }
+
+         tr {
+           &:last-child {
+             td {
+               border: none;
+
+               @include xs {
+                 border-bottom: rem(1) solid #ccc;
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+
+   &__product-wrap {
+     display: flex;
+     align-items: center;
+
+     @include xs {
+       align-items: flex-start;
+     }
+   }
+
+   &__product-img {
+     max-width: rem(70);
+     width: 100%;
+     margin-right: rem(30);
+
+     @include md {
+       margin-right: rem(10);
+     }
+   }
+
+   &__product-title {
+     font-weight: 700;
+     margin-bottom: rem(7);
+
+     @include xs {
+       font-size: rem(12);
+       line-height: rem(12);
+       margin-bottom: rem(5);
+     }
+   }
+
+   &__product-status {
+     color: $orange;
+     font-weight: 700;
+
+     @include xs {
+       font-size: rem(12);
+       line-height: rem(12);
+     }
+   }
+
+   &__total {
+     padding-left: rem(20);
+     font-size: rem(25);
+     font-weight: 700;
+     margin-top: rem(30);
+
+     * {
+       font-size: rem(25);
+       font-weight: 700;
+
+       @include xs {
+         font-size: rem(16);
+       }
+     }
+
+     @include md {
+       padding-left: rem(10);
+     }
+
+     @include xs {
+       font-size: rem(16);
+     }
+   }
+
+   &__product-desc-mobile {
+     display: none;
+     margin-top: rem(20);
+
+     @include xs {
+       display: block;
+     }
+
+     .quantity {
+       margin-bottom: rem(10);
+     }
+   }
+ }
+

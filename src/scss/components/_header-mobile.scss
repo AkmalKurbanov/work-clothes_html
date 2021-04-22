@@ -158,8 +158,8 @@
 
   &__address {
     max-width: rem(135);
-    width: 100%;
-
+    width: 100%;  
+    text-align: right;
     * {
       font-size: rem(12);
       line-height: 12px;
@@ -168,7 +168,9 @@
   }
 
   .catalog-control {
-    max-width: 100%;
+    max-width: 95%;
+    margin: auto;
+    margin-top: rem(20);
 
     .catalog-search-wrap {
       margin-left: 0;

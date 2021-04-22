@@ -1,65 +1,125 @@
 extends layout/main/main
 block title
-  | main
+  | basket
 block main
   .wrapper
     .content
       include includes/header/header
 
-      .slider
-        .container 
-          .slider__wrap 
-            .swiper-container.main-slider
-              .swiper-wrapper
-                mixin slide(img)
-                  .swiper-slide
-                    a(href="#" style="background-image: url(assets/img/"+img+")")
-                +slide('slide.jpg')  
-                +slide('slide.jpg')  
-                +slide('slide.jpg')  
-                +slide('slide.jpg')  
-                +slide('slide.jpg')  
-            .slider-btn.slider-btn--left.main-slider-btn-left
-              .arrow
-                span 
-                span 
-            .slider-btn.slider-btn--right.main-slider-btn-right
-              .arrow
-                span 
-                span  
-
-      .advantages
-        .container 
-          h2 Рабочая одежда по выгодным ценам с доставкой по России и СНГ
-          .advantages__list 
-            mixin advantage(title, desc, modificator)
-              .advantages__item
-                .advantages__wrap  
-                  .advantages__title(class=modificator)
-                    span=title
-                  .advantages__desc
-                    p=desc  
-            +advantage('Доставим куда угодно', 'У нас большой опыт в логистике, сотрудничестве с транспортными компаниями и доставке по Санкт-Петербургу. Осуществляли доставку заказов в разные уголки России, в Казахстан, Беларусь. Грамотно организуем доставку заказа любых объёмов, донесём до вас всю информацию по логистике в понятном виде.','skew green')       
-            +advantage('Почему низкие цены?', 'Работаем в нише спецодежды с 2003 года. За счёт долгих взаимовыгодных отношений с производителями и поставщиками, а также большого количества постоянных клиентов мы держим минимальные наценки на наши товары.','skew orange')       
-            +advantage('Большой ассортимент', 'Имеем собственный склад в Санкт-Петербурге. На нём в наличии широкий ассортимент рабочей одежды разных размером. Если чего-то не окажется на складе, организуем поставку со склада производителя - вам останется только выбрать удобный способ получения и принять заказ. По этим причинам, нашим клиентам мы предлагаем огромный каталог товаров.','skew green')       
-      
-      include includes/pupular
-      
-      .container
-        .info-block 
-          h1 Интернет-магазин спецодежды в Санкт-Петербурге
-          p В каталоге нашего интернет-магазина «Спецода» собрана качественная рабочая одежда оптом и в розницу. Дополнительно мы предлагаем средства индивидуальной защиты и спецобувь для работы летом, в межсезонье и зимой. У нас вы найдете такие категории рабочей спецодежды:
-
-        .call-to-action.skew.orange 
-          span Найдите нужные товары при помощи 
-            a(href="#").underline каталога
-            |  и 
-            a(href="#").underline поиска
-            | !
-         
-              
+      .basket-page
+        .container
+          .basket-page__title Корзина
+          .basket-page__table 
+            table 
+              thead
+                tr
+                  th Товар   
+                  th Количество  
+                  th Цена  
+                  th(colspan="2") Сумма  
+              tbody 
+                tr 
+                  td
+                    .close 
+                      .close-wrap
+                        span  
+                        span  
+                    .basket-page__product-wrap
+                      .basket-page__product-img
+                        img(src="assets/img/popular1.jpg", alt="")
+                      .basket-page__product-desc   
+                        .basket-page__product-title Костюм «Байкал» утеплённый
+                        .basket-page__product-status Есть на складе
+                        .basket-page__product-desc-mobile 
+                          .quantity
+                            .minus.quantity-btn 
+                            input#number(class="form-control"  min="0" type='number' value='0')
+                            .plus.quantity-btn
+                          p Цена за штуку: 
+                            span 4560 руб. 
+                          p Сумма: 
+                            span 136 800 руб.   
 
 
+                  td
+                    .quantity
+                      .minus.quantity-btn 
+                      input#number(class="form-control"  min="0" type='number' value='0')
+                      .plus.quantity-btn
+                  td 3079 руб. 
+                  td 6178 руб. 
+                  td 
+                    .close 
+                      .close-wrap
+                        span  
+                        span  
+                tr 
+                  td
+                    .close 
+                      .close-wrap
+                        span  
+                        span  
+                    .basket-page__product-wrap
+                      .basket-page__product-img
+                        img(src="assets/img/popular2.jpg", alt="")
+                      .basket-page__product-desc   
+                        .basket-page__product-title Костюм «Бригадир Люкс» утепленный.
+                        .basket-page__product-status Есть на складе
+                        .basket-page__product-desc-mobile 
+                          .quantity
+                            .minus.quantity-btn 
+                            input#number(class="form-control"  min="0" type='number' value='0')
+                            .plus.quantity-btn
+                          p Цена за штуку: 
+                            span 4560 руб. 
+                          p Сумма: 
+                            span 136 800 руб
+                  td
+                    .quantity
+                      .minus.quantity-btn 
+                      input#number(class="form-control"  min="0" type='number' value='0')
+                      .plus.quantity-btn
+                  td 4560 руб. 
+                  td 136 800 руб.  
+                  td 
+                    .close 
+                      .close-wrap
+                        span  
+                        span  
+                tr 
+                  td
+                    .close 
+                      .close-wrap
+                        span  
+                        span  
+                    .basket-page__product-title Бесплатное нанесение логотипов
+                    .basket-page__product-status по акции: «При покупке от 30 шт. костюмов (из участвующих в акции) бесплатное нанесение логотипов на каждый»
+                      .basket-page__product-desc-mobile 
+                        .quantity
+                         
+                          input#number(class="form-control"  min="0" type='number' value='0')
+                        
+                        p Цена за штуку: 
+                          span 0 
+                        p Сумма: 
+                          span 0
+                  td
+                    .quantity
+                       
+                      input#number(class="form-control"  min="0" type='number' value='0')
+                      
+                  td 0 руб.  
+                  td 0 руб.  
+                  td 
+                    .close 
+                      .close-wrap
+                        span  
+                        span  
+            .basket-page__total Итого в корзине: 
+              span 142 978 руб. 
+
+          .basket-page__form-order    
+                
     include includes/footer/footer
 
 

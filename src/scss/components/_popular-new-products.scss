@@ -25,6 +25,22 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        &:hover {
+          .btn {
+            color: $wc;
+
+            &--prevailing {
+              background-color: $green;
+              border-color: $green;
+            }
+
+            &--secondary {
+              background-color: $orange;
+              border-color: $orange;
+            }
+          }
+        }
       }
     }
   }
@@ -116,6 +132,7 @@
     @include sm {
       justify-content: space-around;
     }
+
     @include xs {
       justify-content: center;
     }
@@ -123,15 +140,18 @@
 
   .btn {
     max-width: rem(110);
+    width: 100%;
     color: $bc;
     background: transparent;
     border-color: $bc;
+    
     @include xs {
       font-size: rem(12);
       font-weight: 900;
       line-height: rem(12);
       height: rem(34);
       margin-right: rem(12);
+      max-width: rem(90);
     }
 
     &:last-child {

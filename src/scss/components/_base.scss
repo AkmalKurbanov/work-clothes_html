@@ -13,6 +13,10 @@ body {
   font-family: $akr;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .scroll-disabled {
   overflow: hidden;
 }
@@ -209,7 +213,6 @@ p {
       padding: 0 rem(10);
       font-size: rem(15);
       height: rem(42);
-      border-radius: rem(5);
     }
 
     &:hover {

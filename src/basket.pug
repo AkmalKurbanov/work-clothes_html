@@ -5,6 +5,24 @@ block main
   .wrapper
     .content
       include includes/header/header
+      
+      .basket-page
+        .container
+          .basket-page__empty
+            .basket-page__empty-col
+              .basket-page__empty-title В корзине ещё нет товаров.
+              .call-to-action.skew.orange 
+                span Найдите нужные товары при помощи 
+                  a(href="#").underline.catalog-js каталога
+                  |  и 
+                  a(href="#").underline.search-js поиска
+                  | !
+            .basket-page__empty-col
+              .basket-page__empty-img
+                 img(src="assets/img/notfound.jpg", alt="") 
+
+
+      
 
       .basket-page
         .container
@@ -116,10 +134,89 @@ block main
                         span  
                         span  
             .basket-page__total Итого в корзине: 
-              span 142 978 руб. 
+              span 142 978 руб.
 
-          .basket-page__form-order    
-                
+
+        .container
+          .basket-page__form-order
+            .container
+              .basket-page__title Оформление заказа
+              .basket-page__form-col-wrap
+                .basket-page__form-col
+                  .basket-page__form-title
+                    span 1
+                    | Выберите способ доставки
+                  .basket-page__form-wrap  
+                    .radio
+                      input#radio-1(name='radio' type='radio')
+                      label.radio-label(for='radio-1') Самовывоз в г. Санкт-Петербурге, ул. Бехтерева, д. 2
+                    .radio
+                      input#radio-2(name='radio' type='radio')
+                      label.radio-label(for='radio-2') Доставка по адресу в Санкт-Петербурге
+                    .radio
+                      input#radio-3(name='radio' type='radio')
+                      label.radio-label(for='radio-3')  Доставка по адресу в Ленинградской области
+                    .radio
+                      input#radio-4(name='radio' type='radio')
+                      label.radio-label(for='radio-4')  Доставка по России или странам СНГ (транспортной службой)
+                    .textarea
+                      label(for="textarea") Введите точный адрес доставки (город, улица, дом, помещение, где вход):
+                      textarea#textarea(name="", cols="30", rows="10" placeholder="") 
+                    p Стоимость доставки: 3000 руб. <br>Бесплатно от 230 000 руб 
+                    p.error-form Введите адрес доставки
+                .basket-page__form-col
+                  .basket-page__form-title
+                    span 2
+                    | Выберите способ оплаты
+                  .basket-page__form-wrap  
+                    .radio
+                      input#radio-5(name='radio' type='radio')
+                      label.radio-label(for='radio-5') Юридическое лицо
+                    .radio
+                      input#radio-6(name='radio' type='radio')
+                      label.radio-label(for='radio-6') Физическое лицо
+                    
+                    .input
+                      label Введите ИНН:
+                      .input__wrap
+                        input(type="text")
+                    .input.input--file
+                      label Прикрепите реквизиты:
+                      .input__wrap
+                        input(type="file" multiple)#input_file
+                        .input__btn.btn.btn--prevailing#input_btn Выберите файл
+                      p.error-form Ошибка. Заполните все поля   
+                .basket-page__form-col
+                  .basket-page__form-title
+                    span 3
+                    | Основные данные
+                  .basket-page__form-wrap 
+                    .input
+                      label(for="name") Как к вам обращаться:
+                      .input__wrap
+                        input(type="text" id="name" name="name")
+                    .input
+                      label(for="name") Ваш телефон:
+                      .input__wrap
+                        input(type="text" id="name" name="name")
+                    .input
+                      label(for="name") Ваш e-mail:
+                      .input__wrap
+                        input(type="text" id="name" name="name")
+                .basket-page__form-col.basket-page__form-col--total
+                  ul
+                    li
+                      span Доставка по адресу в Санкт-Петербурге: 
+                      | Выборгское шоссе, д. 28, к. 3. подъезд 5, вход со двора
+                    li 
+                      span Оплата как физическое лицо.
+                    li
+                      span К оплате: 
+                      | 145 978 руб. 
+                  button(type="submit").btn.btn--prevailing Оформить заказ
+                  p.error-form Заполните основные данные
+                  p.error-form Введите адрес доставки
+                  p.error-form Введите ИНН или прикрепите файл с реквизитами организации
     include includes/footer/footer
 
 

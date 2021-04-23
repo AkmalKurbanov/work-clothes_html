@@ -1,0 +1,282 @@
+extends layout/main/main
+block title
+  | catalog
+block main
+  .wrapper
+    .content
+      include includes/header-catalog/header-catalog
+
+      .catalog-page
+        .mobile-filter
+          .close
+            .close-wrap 
+              span
+              span
+          .container
+            .mobile-filter__title Выберите фильтры и соритровку:
+            .select
+                |Сортировка
+                input(type="hidden" class="select-type" value="Сначала недорогие")
+                .form-group-ckecked
+                  span Сначала недорогие
+                  .arrow 
+                    i
+                    i
+                  ul.dropdown
+                    mixin formItem(code)
+                      li(class="option" data-value=code)=code 
+                    +formItem('Сначала недорогие')  
+                    +formItem('От А до Я')  
+                    +formItem('От А до Я')
+                    +formItem('Сначала недорогие')
+                    +formItem('Сначала дорогие') 
+            .catalog-page__filter
+                .catalog-page__filter-title Фильтры
+                .catalog-page__filter-item
+                  .catalog-page__filter-subtitle Цена
+                  .catalog-page__filter-range 
+                    .catalog-page__filter-value
+                      label(for='amount') От
+                      input#amount_min-mob(type='text' style='border:0; color:#f6931f; font-weight:bold;')
+                      
+                      label(for='amount') До
+                      input#amount_max-mob(type='text' style='border:0; color:#f6931f; font-weight:bold;')
+                    #slider-range-mob
+                .catalog-page__filter-item
+                  .catalog-page__filter-subtitle Размер
+                  .catalog-page__filter-check
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="s")
+                      label(for="s") S
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="m")
+                      label(for="m") M
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="l")
+                      label(for="l") L
+                .catalog-page__filter-item
+                  .catalog-page__filter-subtitle Ткань
+                  .catalog-page__filter-check.catalog-page__filter-check--cloth
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="polester")
+                      label(for="polester") Полиэстер
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="hlopok")
+                      label(for="hlopok") Хлопок
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="dyspo")
+                      label(for="dyspo") Дюспо
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="sarja")
+                      label(for="sarja") Саржа
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="viskoza")
+                      label(for="viskoza") Вискоза
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="viskoza1")
+                      label(for="viskoza1") Вискоза
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="viskoza2")
+                      label(for="viskoza2") Вискоза
+                    .catalog-page__filter-check-item 
+                      input(type="checkbox" id="viskoza3")
+                      label(for="viskoza3") Вискоза 
+        .container
+          .breadcrumbs
+            ul  
+              mixin crumb(crumb)
+                li
+                  a(href="#")=crumb
+              +crumb('Рабочая одежда')
+              +crumb('Спецодежда')
+          h1 Каталог спецодежды в Санкт-Петербурге
+          .catalog-page__subcategory-wrap
+            mixin subcategory(img,title) 
+              .catalog-page__subcategory-item
+                a(href="#").catalog-page__subcategory 
+                  .catalog-page__subcategory-img
+                    img(src=img, alt="")
+                  .catalog-page__subcategory-title=title
+            
+            +subcategory('assets/img/catalog1.jpg','Зимняя спецодежда') 
+            +subcategory('assets/img/catalog2.jpg','Летняя спецодежда') 
+            +subcategory('assets/img/catalog3.jpg','Защитная спецодежда') 
+            +subcategory('assets/img/catalog4.jpg','По профессиям') 
+            +subcategory('assets/img/catalog5.jpg','Трикотаж') 
+          .catalog-page__filter-mobile-trigger 
+            a(href="#").underline Фильтры и сортировка
+
+          .catalog-page__wrap
+            .catalog-page__filter
+              .catalog-page__filter-title Фильтры
+              .catalog-page__filter-item
+                .catalog-page__filter-subtitle Цена
+                .catalog-page__filter-range 
+                  .catalog-page__filter-value
+                    label(for='amount') От
+                    input#amount_min(type='text' style='border:0; color:#f6931f; font-weight:bold;')
+                    
+                    label(for='amount') До
+                    input#amount_max(type='text' style='border:0; color:#f6931f; font-weight:bold;')
+                  #slider-range
+              .catalog-page__filter-item
+                .catalog-page__filter-subtitle Размер
+                .catalog-page__filter-check
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="s")
+                    label(for="s") S
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="m")
+                    label(for="m") M
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="l")
+                    label(for="l") L
+              .catalog-page__filter-item
+                .catalog-page__filter-subtitle Ткань
+                .catalog-page__filter-check.catalog-page__filter-check--cloth
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="polester")
+                    label(for="polester") Полиэстер
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="hlopok")
+                    label(for="hlopok") Хлопок
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="dyspo")
+                    label(for="dyspo") Дюспо
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="sarja")
+                    label(for="sarja") Саржа
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="viskoza")
+                    label(for="viskoza") Вискоза
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="viskoza1")
+                    label(for="viskoza1") Вискоза
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="viskoza2")
+                    label(for="viskoza2") Вискоза
+                  .catalog-page__filter-check-item 
+                    input(type="checkbox" id="viskoza3")
+                    label(for="viskoza3") Вискоза
+                  
+
+            .catalog-page__replace-block
+              .select
+                |Сортировка
+                input(type="hidden" class="select-type" value="Сначала недорогие")
+                .form-group-ckecked
+                  span Сначала недорогие
+                  .arrow 
+                    i
+                    i
+                  ul.dropdown
+                    mixin formItem(code)
+                      li(class="option" data-value=code)=code 
+                    +formItem('Сначала недорогие')  
+                    +formItem('От А до Я')  
+                    +formItem('От А до Я')
+                    +formItem('Сначала недорогие')
+                    +formItem('Сначала дорогие') 
+              .catalog-page__filter-product-wrap
+                mixin searchResult(img, title, cost, status)
+                  .catalog-page__item
+                    .catalog-page__item-wrap 
+                      .search-result__img
+                        img(src=img, alt="") 
+                      .catalog-page__info
+                        .catalog-page__ratting
+                        .catalog-page__itle=title
+                        .catalog-page__cost=cost
+                        .catalog-page__status=status
+                    .catalog-page__control 
+                      a(href="#").btn.btn--prevailing К товару
+                      a(href="#").btn.btn--secondary.quick-order Быстрый заказ
+                +searchResult('assets/img/popular1.jpg','Костюм «Байкал» утеплённый','3079 руб.','Есть на складе')
+                +searchResult('assets/img/popular2.jpg','Костюм «Бригадир Люкс» утепленный.','4560 руб.','Под заказ')
+                +searchResult('assets/img/popular3.jpg','Респиратор складной KN95 FFP2 с клапаном','55 руб.','Есть на складе')
+                +searchResult('assets/img/popular4.jpg','Каска защитная "Quarts up IV" (Квартс-ап 4) белая','500 руб..','Есть на складе')
+                +searchResult('assets/img/popular4.jpg','Каска защитная "Quarts up IV" (Квартс-ап 4) белая','500 руб..','Есть на складе')
+                +searchResult('assets/img/popular3.jpg','Респиратор складной KN95 FFP2 с клапаном','55 руб.','Есть на складе')
+                +searchResult('assets/img/popular1.jpg','Костюм «Байкал» утеплённый','3079 руб.','Есть на складе')
+                +searchResult('assets/img/popular2.jpg','Костюм «Бригадир Люкс» утепленный.','4560 руб.','Под заказ')
+                +searchResult('assets/img/popular1.jpg','Костюм «Байкал» утеплённый','3079 руб.','Есть на складе')
+                +searchResult('assets/img/popular4.jpg','Каска защитная "Quarts up IV" (Квартс-ап 4) белая','500 руб..','Есть на складе')
+                +searchResult('assets/img/popular2.jpg','Костюм «Бригадир Люкс» утепленный.','4560 руб.','Под заказ')
+                +searchResult('assets/img/popular3.jpg','Респиратор складной KN95 FFP2 с клапаном','55 руб.','Есть на складе') 
+
+              .pagination 
+                ul 
+                  li.pagination__prev
+                    a(href="#").slider-btn.slider-btn--left
+                      .arrow
+                        span 
+                        span 
+                  li.active
+                    a(href="#") 1  
+                  li
+                    a(href="#") 2 
+                  li
+                    a(href="#") 3  
+                  li
+                    a(href="#") 4  
+                  li
+                    a(href="#") 5  
+                  li.pagination__next
+                    a(href="#").slider-btn.slider-btn--right
+                      .arrow
+                        span 
+                        span 
+                    
+
+          .call-to-action.skew.orange 
+            span Не нашли, что искали? Позвоните и мы найдём для вас 
+              a(href="#").underline +7 (812) 642-23-10      
+
+
+
+          .catalog-page__category-slider 
+            .catalog-page__category-slider-title Похожие категории товаров
+            .catalog-page__category-slider-wrap
+              .swiper-container.category-slider             
+                .swiper-wrapper
+                  .swiper-slide
+                    +subcategory('assets/img/catalog1.jpg','Зимняя спецодежда') 
+                  .swiper-slide
+                    +subcategory('assets/img/catalog2.jpg','Летняя спецодежда')  
+                  .swiper-slide
+                    +subcategory('assets/img/catalog3.jpg','Защитная спецодежда') 
+                  .swiper-slide
+                    +subcategory('assets/img/catalog4.jpg','По профессиям') 
+                  .swiper-slide
+                    +subcategory('assets/img/catalog5.jpg','Трикотаж')  
+              .slider-btn.slider-btn--left.category-slider-left
+                .arrow
+                  span 
+                  span 
+              .slider-btn.slider-btn--right.category-slider-right
+                .arrow
+                  span 
+                  span  
+
+          .container
+            .info-block 
+              h2 Рабочая одежда для любых целей 
+              p В каталоге нашего интернет-магазина «Спецода» собрана качественная рабочая одежда оптом и в розницу. Дополнительно мы предлагаем средства индивидуальной защиты и спецобувь для работы летом, в межсезонье и зимой. У нас вы найдете такие категории рабочей спецодежды:
+
+              
+            
+            
+            
+            
+
+                
+            
+
+        
+              
+
+
+    include includes/footer/footer
+
+
+  include includes/scripts 

@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-  $('.header-mobile__nav-icon--menu').parent().on('click', function () {
+  $('.header-mobile__nav-icon--menu').parent().on('click', function (e) {
+    e.preventDefault();
     $('.mobile-menu').addClass('--open');
     $('body').addClass('scroll-disabled');
   });

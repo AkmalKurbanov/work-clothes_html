@@ -14,7 +14,6 @@
     margin-right: rem(30);
     margin-bottom: rem(30);
     margin-top: rem(68);
-    border: rem(1) solid transparent;
     transition: $tr;
     cursor: pointer;
     padding: rem(20) rem(10);
@@ -28,7 +27,19 @@
     }
 
     &:hover {
-      border-color: $bc;
+      .btn {
+        color: $wc;
+
+        &--prevailing {
+          background-color: $green;
+          border-color: $green;
+        }
+
+        &--secondary {
+          background-color: $orange;
+          border-color: $orange;
+        }
+      }
     }
 
     &:nth-child(4n) {

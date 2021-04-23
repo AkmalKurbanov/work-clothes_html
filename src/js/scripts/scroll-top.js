@@ -10,7 +10,7 @@ $(document).ready(function () {
     $("body").scrollTop(0);
 
     setTimeout(function () {
-      $('input').focus();
+      $('#search').focus();
     }, 1000);
   });
 });

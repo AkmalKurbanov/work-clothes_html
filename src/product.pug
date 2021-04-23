@@ -169,9 +169,42 @@ block main
                 .tabs_item 
                   h2 Отзывы клиентов о товаре 
                     span Летний костюм рабочий «Стройка» с полукомбинизоном
-                  .reviews-none
-                    p Ещё никто не оставил отзыв об этом товаре. Будьте первым! Ваш опыт будет полезен другим.  
-                    a(href="#").btn Оставить отзыв 
+
+                  .reviews
+                    .reviews-none
+                        p Ещё никто не оставил отзыв об этом товаре. Будьте первым! Ваш опыт будет полезен другим.  
+                        a(href="#").btn Оставить отзыв
+                    .reviews__wrap
+                      .reviews__wrap-col
+                        .reviews__item
+                          .reviews__col
+                            .reviews__date 15.03.2021	      
+                            .reviews__name Павел      
+                            .reviews__rating
+                          .reviews__col
+                            .reviews__theme Отзыв о товаре Летний костюм рабочий «Стройка» с полукомбинизоном
+                            .reviews__review Кайфовый широкий костюм с хорошим сочетанием цена-качество.  Моим узбекам очень понравился. Зашивается легко 
+                            .reviews__control
+                              .reviews__edit Редактировать                             
+                              .reviews__delete Удалить 
+                        .reviews__item
+                          .reviews__col
+                            .reviews__date 15.03.2021	      
+                            .reviews__name Павел      
+                            .reviews__rating
+                          .reviews__col
+                            .reviews__theme Отзыв о товаре Летний костюм рабочий «Стройка» с полукомбинизоном
+                            .reviews__review Кайфовый широкий костюм с хорошим сочетанием цена-качество.  Моим узбекам очень понравился. Зашивается легко 
+                            .reviews__control
+                              .reviews__edit Редактировать                             
+                              .reviews__delete Удалить 
+                      .reviews__wrap-col
+                        p Оставьте свой отзыв о сайте!
+                        a(href="#").btn Оставить отзыв
+                        .reviews__rating 
+                          p Рейтинг сайта на основе всех отзывов покупателей: 
+
+
                 .tabs_item
                   .product__size.product-tb
                     .product__table-size
@@ -240,24 +273,24 @@ block main
                   span
               .tabs-mobile__tab-content  
                   table.characteristics-table
-                  tr 
-                    td Страна:
-                    td Россия
-                  tr 
-                    td ГОСТ: 
-                    td 12.4.280-2014
-                  tr 
-                    td Ткань: 
-                    td Смесовая (65% ПЭ, 35% х/б) 210 г/м2
-                  tr 
-                    td Цвет:  
-                    td синий+васильковый
-                  tr 
-                    td Застёжка:   
-                    td простая
-                  tr 
-                    td Сезон:    
-                    td лето
+                    tr 
+                      td Страна:
+                      td Россия
+                    tr 
+                      td ГОСТ: 
+                      td 12.4.280-2014
+                    tr 
+                      td Ткань: 
+                      td Смесовая (65% ПЭ, 35% х/б) 210 г/м2
+                    tr 
+                      td Цвет:  
+                      td синий+васильковый
+                    tr 
+                      td Застёжка:   
+                      td простая
+                    tr 
+                      td Сезон:    
+                      td лето
             .tabs-mobile__item
               .tabs-mobile__tab Отзывы
                 .arrow   
@@ -271,7 +304,7 @@ block main
                   span
               .tabs-mobile__tab-content  
           include includes/pupular      
-        
+          +popular('Похожие товары')
                 
     include includes/footer/footer
 

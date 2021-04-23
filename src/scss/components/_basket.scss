@@ -12,8 +12,12 @@
      table {
        width: 100%;
        border-spacing: 0;
-       border-radius: rem(10);
+       border-radius: rem(10) rem(10) 0 0;
        overflow: hidden;
+
+       @include xs {
+         border-radius: 0;
+       }
 
        thead {
          background-color: $green;
@@ -48,7 +52,7 @@
 
            &:first-child {
              max-width: 12rem;
-             padding-left: rem(20);
+             padding-left: rem(15);
              padding-right: rem(20);
 
              .close {
@@ -79,7 +83,6 @@
            .close {
              position: relative;
              top: auto;
-             right: auto;
            }
 
            .quantity {
@@ -98,6 +101,12 @@
          }
 
          tr {
+           transition: $tr;
+
+           &:hover {
+             background-color: #e1fbec;
+           }
+
            &:last-child {
              td {
                border: none;
@@ -153,7 +162,7 @@
    }
 
    &__total {
-     padding-left: rem(20);
+     padding-left: rem(15);
      font-size: rem(25);
      font-weight: 700;
      margin-top: rem(30);
@@ -187,6 +196,207 @@
      .quantity {
        margin-bottom: rem(10);
      }
+
+     p {
+       display: block;
+     }
+   }
+
+   &__form-wrap {
+     padding-left: rem(12);
+   }
+
+   &__form-col-wrap {
+     display: flex;
+     flex-wrap: wrap;
+   }
+
+   &__form-order {
+     margin-top: rem(120);
+
+     @include lg {
+       margin-top: rem(100);
+     }
+   }
+
+   &__form-title {
+     font-size: rem(25);
+     line-height: rem(12);
+     display: flex;
+     align-items: center;
+     margin-bottom: rem(20);
+
+     @include xs {
+       font-size: rem(20);
+     }
+
+     span {
+       border: rem(1) solid $bc;
+       border-radius: 100%;
+       width: rem(39);
+       height: rem(39);
+       display: inline-flex;
+       justify-content: center;
+       align-items: center;
+       padding-bottom: 5px;
+       text-decoration: underline;
+       margin-right: rem(10);
+     }
+   }
+
+   &__form-col {
+     margin-bottom: rem(65);
+
+     @include sm {
+       flex-basis: 100% !important;
+     }
+
+     &:first-child {
+       flex-basis: 60%;
+
+       @include md {
+         flex-basis: 50%;
+       }
+     }
+
+     &:nth-child(2) {
+       flex-basis: 40%;
+
+       @include md {
+         flex-basis: 45%;
+       }
+     }
+
+     &:nth-child(3) {
+       flex-basis: 26%;
+       margin-bottom: 0;
+
+       @include md {
+         flex-basis: 40%;
+       }
+
+       .basket-page__form-wrap {
+         padding-left: rem(2);
+       }
+     }
+
+     &--total {
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       margin-bottom: rem(25);
+
+       @include md {
+         flex-basis: 50%;
+         margin-bottom: 0;
+         margin-top: rem(25);
+       }
+
+       span {
+         font-weight: 900;
+       }
+
+       .btn {
+         display: inline-flex;
+         max-width: rem(140);
+         margin-top: rem(10);
+       }
+     }
+   }
+
+   .radio {
+     label {
+       @include md {
+         padding-left: rem(20);
+         font-size: rem(13);
+       }
+     }
+   }
+
+   .btn {
+     width: 100%;
+     height: 2.5rem;
+     font-size: rem(16);
+   }
+
+   .input__wrap {
+     @include xs {
+       max-width: rem(200);
+     }
+   }
+
+   &__empty {
+     display: flex;
+     align-items: center;
+
+     @include xs {
+       flex-direction: column;
+       justify-content: center;
+     }
+   }
+
+   &__empty-title {
+     font-size: rem(35);
+     font-weight: 900;
+
+     @include md {
+       font-size: rem(30);
+     }
+
+     @include sm {
+       font-size: rem(22);
+     }
+
+     @include xs {
+       font-size: rem(20);
+     }
+   }
+
+   &__empty-col {
+     @include xs {
+       flex-basis: 100%;
+     }
+
+     .call-to-action {
+       margin-top: rem(40);
+
+       @include sm {
+         margin-top: rem(18);
+         margin-bottom: rem(20);
+       }
+
+       @include xs {
+         margin-top: rem(18);
+         margin-bottom: rem(30);
+       }
+     }
+
+     &:first-child {
+       flex-basis: 35%;
+       margin-right: rem(200);
+
+       @include lg {
+         flex-basis: 50%;
+         margin-right: rem(70);
+       }
+
+       @include md {
+         flex-basis: 55%;
+         margin-right: rem(50);
+       }
+
+       @include xs {
+         margin: 0;
+       }
+     }
+
+     &:last-child {
+       flex-basis: 40%;
+     }
+   }
+
+   p {
+     display: inline-block;
+     vertical-align: top;
    }
  }
-

@@ -1,0 +1,52 @@
+extends layout/main/main
+block title
+  | catalog search
+block main
+  .wrapper
+    .content
+      include includes/header-catalog/header-catalog
+
+      .catalog-page.catalog-page--search
+        .container
+          .title Каталог интернет-магзина «Рабочая одежда»
+          .subtitle Выберите нужную категорию:
+          .catalog
+            .catalog__left-col
+              .catalog__category.category
+                ul
+                  mixin catalogCategory(icon, title, active)
+                    li.category__item
+                      a(href="#").category__item-wrap
+                        .category__icon 
+                          img(src=icon, alt="")  
+                        .category__title
+                          span=title
+
+                  +catalogCategory('assets/img/specodezhda-150x150.png','Спецодежда')    
+                  +catalogCategory('assets/img/rabochaya-obuv-150x150.png','Рабочая обувь')    
+                  +catalogCategory('assets/img/zatshita-ruk-150x150.png','Защита для рук')    
+                  +catalogCategory('assets/img/siz-150x150.png','СИЗ')    
+                  +catalogCategory('assets/img/drugoe-150x150.png','Другое')    
+         
+        .container
+          .info-block 
+            h2 Рабочая одежда для любых целей 
+            p В каталоге нашего интернет-магазина «Спецода» собрана качественная рабочая одежда оптом и в розницу. Дополнительно мы предлагаем средства индивидуальной защиты и спецобувь для работы летом, в межсезонье и зимой. У нас вы найдете такие категории рабочей спецодежды:
+
+              
+            
+            
+            
+            
+
+                
+            
+
+        
+              
+
+
+    include includes/footer/footer
+
+
+  include includes/scripts 

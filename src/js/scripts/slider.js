@@ -82,4 +82,35 @@ $(document).ready(function () {
     }
   });
 
+  var swiper = new Swiper('.category-slider ', {
+    loop: true,
+    speed: 1000,
+    // autoplay: {
+    //   delay: 3000,
+    // },
+    navigation: {
+      nextEl: '.category-slider-left',
+      prevEl: '.category-slider-right',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      }
+    }
+  });
+
 });

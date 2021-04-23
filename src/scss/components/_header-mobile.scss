@@ -16,7 +16,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 99;
+    z-index: 9999;
 
     .container {
       padding: 0 rem(10);
@@ -65,70 +65,6 @@
 
   &__nav-icon {
     min-height: rem(35);
-
-    &--catalog {
-      position: relative;
-
-      span {
-        height: rem(3);
-        background-color: $bc;
-        width: 100%;
-        display: block;
-        position: absolute;
-        left: rem(5);
-
-        &:first-child {
-          width: rem(30);
-          top: rem(10);
-        }
-
-        &:nth-child(2) {
-          width: rem(20);
-          top: rem(18);
-        }
-
-        &:last-child {
-          width: rem(12);
-          bottom: rem(7);
-        }
-      }
-    }
-
-    &--menu {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      div {
-        width: rem(30);
-        height: rem(30);
-        border: rem(1) solid $bc;
-        border-radius: 100%;
-        position: relative;
-
-        span {
-          width: rem(15);
-          height: rem(2);
-          background-color: $bc;
-          position: absolute;
-          left: 6px;
-
-          &:first-child {
-            top: rem(7);
-          }
-
-          &:nth-child(2) {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
-
-          &:last-child {
-            bottom: rem(7);
-          }
-        }
-      }
-    }
   }
 
   &__nav-icon,
@@ -158,8 +94,9 @@
 
   &__address {
     max-width: rem(135);
-    width: 100%;  
+    width: 100%;
     text-align: right;
+
     * {
       font-size: rem(12);
       line-height: 12px;
@@ -283,6 +220,8 @@
 
         a {
           position: relative;
+          font-size: rem(20);
+          line-height: rem(25);
 
           &:hover {
             &:after {

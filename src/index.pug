@@ -12,7 +12,7 @@ block main
             .swiper-container.main-slider
               .swiper-wrapper
                 mixin slide(img)
-                  .swiper-slide
+                  .swiper-slide(np)
                     a(href="#" style="background-image: url(assets/img/"+img+")")
                 +slide('slide.jpg')  
                 +slide('slide.jpg')  

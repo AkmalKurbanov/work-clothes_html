@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('.popup-window').fadeOut();
   });
 
-  $('.call-back-js, .personal-cabinet, .quick-order').on('click', function (e) {
+  $('.call-back-js, .personal-cabinet, .quick-order, .reviews-js').on('click', function (e) {
     e.preventDefault()
     $('body').addClass('dark-layout');
   });
@@ -24,6 +24,12 @@ $(document).ready(function () {
     e.preventDefault()
     $('.popup-window--quick-order').fadeIn();
   });
+ 
+  $('.reviews-js').on('click', function (e) {
+    e.preventDefault()
+    $('.popup-window--review').fadeIn();
+  });
+
 
 
 

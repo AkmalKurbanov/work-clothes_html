@@ -2,28 +2,6 @@ extends layout/main/main
 block title
   | reviews
 block main
-  .popup-window.popup-window--review
-    .close
-      .close-wrap
-        span
-        span
-    .popup-window__wrap
-      .popup-window__title Оставьте отзыв о сайте
-      form(action="")
-        .input
-          label(for="name ") Ваше имя:
-          .input__wrap
-            input(type="text" id="name" name="name")  
-        .input
-          label(for="phone") Ваш телефон:
-          .input__wrap
-            input(type="text" id="phone" name="phone")
-        .rating Ваша оценка:    
-        .textarea
-          label(for="textarea") Отзыв:
-          textarea#textarea(name="", cols="30", rows="10")    
-        button(type="submite").btn.btn--secondary Отправить	
-        p.error Ошибка. Заполните все поля
   .wrapper
     .content
       include includes/header/header
@@ -42,7 +20,8 @@ block main
           .reviews
             .reviews-none
                 p Ещё никто не оставил отзыв об этом товаре. Будьте первым! Ваш опыт будет полезен другим.  
-                a(href="#").btn Оставить отзыв
+                a(href="#").btn.reviews-js Оставить отзыв
+            br    
             .reviews__wrap
               .reviews__wrap-col
                 .reviews__item
@@ -68,10 +47,10 @@ block main
                       .reviews__edit Редактировать                             
                       .reviews__delete Удалить 
               .reviews__wrap-col
-                p Оставьте свой отзыв о сайте!
-                a(href="#").btn Оставить отзыв
+                p.reviews__additional-text Оставьте свой отзыв о сайте!
+                a(href="#").btn.reviews-js Оставить отзыв
                 .reviews__rating 
-                  p Рейтинг сайта на основе всех отзывов покупателей: 
+                  p.reviews__additional-text Рейтинг сайта на основе всех отзывов покупателей: 
               
 
 

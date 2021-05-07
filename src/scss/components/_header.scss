@@ -104,7 +104,8 @@
           }
         }
 
-        &.active {
+        &.active,
+        &.current-menu-item {
           background-color: $green;
         }
 
@@ -169,6 +170,12 @@
 
     @include md {
       flex-wrap: wrap;
+    }
+  }
+
+  .custom-logo-link {
+    img {
+      height: auto;
     }
   }
 

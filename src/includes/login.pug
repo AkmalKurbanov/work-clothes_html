@@ -138,3 +138,29 @@
           |Перезвоним в ближайшее время.
           |Работаем Пн-Пт с 9:00 до 17:00 
         p Желаем хорошего дня!
+
+
+
+
+.popup-window.popup-window--review
+    .close
+      .close-wrap
+        span
+        span
+    .popup-window__wrap
+      .popup-window__title Оставьте отзыв о сайте
+      form(action="")
+        .input
+          label(for="name ") Ваше имя:
+          .input__wrap
+            input(type="text" id="name" name="name")  
+        .input
+          label(for="phone") Ваш телефон:
+          .input__wrap
+            input(type="text" id="phone" name="phone")
+        .rating Ваша оценка:    
+        .textarea
+          label(for="textarea") Отзыв:
+          textarea#textarea(name="", cols="30", rows="10")    
+        button(type="submite").btn.btn--secondary Отправить	
+        p.error Ошибка. Заполните все поля

@@ -144,7 +144,7 @@
     color: $bc;
     background: transparent;
     border-color: $bc;
-    
+
     @include xs {
       font-size: rem(12);
       font-weight: 900;
@@ -157,6 +157,22 @@
     &:last-child {
       @include xs {
         margin-right: 0;
+      }
+    }
+
+    &--prevailing {
+      @include xs {
+        background-color: $green;
+        border-color: $green;
+        color: $wc;
+      }
+    }
+
+    &--secondary {
+      @include xs {
+        background-color: $orange;
+        border-color: $orange;
+        color: $wc;
       }
     }
   }

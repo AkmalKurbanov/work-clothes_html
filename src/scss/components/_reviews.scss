@@ -168,6 +168,27 @@
       border-color: $green;
     }
   }
+
+  &__additional-text {
+    font-size: rem(20) !important;
+
+    @include lg {
+      font-size: rem(18) !important;
+    }
+
+    @include md {
+      font-size: rem(16) !important;
+    }
+
+    @include sm {
+      font-size: rem(15) !important;
+    }
+
+
+    @include xs {
+      font-size: rem(14) !important;
+    }
+  }
 }
 
 .reviews-none {
@@ -202,4 +223,6 @@
       color: $wc;
     }
   }
+
+
 }

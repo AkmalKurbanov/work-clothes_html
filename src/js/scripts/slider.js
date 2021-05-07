@@ -3,9 +3,10 @@ $(document).ready(function () {
   var swiper = new Swiper('.main-slider', {
     loop: true,
     // effect: 'fade',
-    autoplay: {
-      delay: 3000,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    // },
+    autoplay: true,
     navigation: {
       prevEl: '.main-slider-btn-left',
       nextEl: '.main-slider-btn-right',
